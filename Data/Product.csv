@@ -1,0 +1,201 @@
+ProductID,CategoryID,ProductName,Colour,Size,Description,Composition,Care,Price,Inventory
+P6033,CA1010,EMBROIDERED OUTERWEAR,Indigo,3XL,indigo trendy embroidered outerwear for man,60% wool 40% acrylic,lay flat to dry,59.83,2614658
+P6034,CA1005,TEXTURED OUTERWEAR,Aquamarine,3XL,aquamarine luxurious textured outerwear for woman,95% acrylic 5% spandex,Gentle cycle,10.38,4948375
+P6035,CA1013,COMPACT SWEATERS,Crimson,S,crimson stylish compact sweaters for kids,95% acrylic 6% spandex,Gentle cycle,8.76,5737676
+P6036,CA1007,BOXY-FIT  HOODIES,Puce,M,puce luxurious boxy-fit  hoodies for man,70% viscose 30% nylon,Spot clean with damp cloth,14.01,4060270
+P6037,CA1001,FADED JACKETS,Teal,M,teal trendy faded jackets for woman,60% wool 40% acrylic,lay flat to dry,78.28,268696
+P6038,CA1007,FADED  HOODIES,Puce,S,puce trendy faded  hoodies for man,50% cotton 50% polyester,do not wring or twist,25.46,3241822
+P6039,CA1001,FLORAL PRINT JACKETS,Khaki,S,khaki chic floral print jackets for woman,70% viscose 30% nylon,tumble dry low,24.37,7489620
+P6040,CA1009,VINTAGE-EFFECT  PANTS,Puce,XS,puce classic vintage-effect pants for man,50% cotton 51% polyester,iron on low heat,81.52,7426330
+P6041,CA1006,QUARTER-ZIP JACKETS,Crimson,S,crimson chic quarter-zip jackets for man,60% wool 40% acrylic,Gentle cycle,8.76,5737676
+P6042,CA1009,TECHNICAL PANTS,Mauv,S,mauv elegant detailing technical pants for man,80% linen 20% cotton,Spot clean with damp cloth,36.5,1973732
+P6043,CA1012,BOXY-FIT  HOODIES,Red,S,red luxurious boxy-fit  hoodies for kids,70% viscose 31% nylon,do not wring or twist,31.12,4336115
+P6044,CA1001,QUARTER-ZIP JACKETS,Khaki,L,khaki chic quarter-zip jackets for woman,95% acrylic 5% spandex,hang to dry,10.77,3623751
+P6045,CA1011,TECHNICAL JACKETS,Puce,XL,puce elegant detailing technical jackets for kids,60% wool 41% acrylic,tumble dry low,71,5750905
+P6046,CA1009,ABSTRACT PRINT PANTS,Crimson,2XL,crimson modern  abstract print pants for man,95% acrylic 6% spandex,Spot clean with damp cloth,66.72,913318
+P6047,CA1003,VINTAGE-EFFECT  SWEATERS,Teal,3XL,teal classic vintage-effect sweaters for woman,60% wool 40% acrylic,hang to dry,47.44,8952545
+P6048,CA1001,COMPACT JACKETS,Mauv,XS,mauv stylish compact jackets for woman,50% cotton 50% polyester,Do not bleach,27.03,8111506
+P6049,CA1001,EMBROIDERED JACKETS,Orange,3XL,orange trendy embroidered jackets for woman,80% linen 20% cotton,hang to dry,43.66,9778117
+P6050,CA1009,EMBROIDERED PANTS,Teal,2XL,teal trendy embroidered pants for man,95% acrylic 6% spandex,Hand wash with mild detergent,91.54,1148499
+P6051,CA1015,TECHNICAL OUTERWEAR,Teal,M,teal elegant detailing technical outerwear for kids,50% cotton 51% polyester,lay flat to dry,17.35,3241822
+P6052,CA1004,CARTOON PRINT PANTS,Blue,3XL,blue stylish cartoon print pants for woman,95% acrylic 5% spandex,Hand wash with mild detergent,78.43,6123809
+P6053,CA1006,PLAINED JACKETS,Fuscia,XL,fuscia elegant detailing plained jackets for man,80% linen 20% cotton,Hand wash with mild detergent,95.06,6995441
+P6054,CA1006,SLOGAN PRINT JACKETS,Indigo,3XL,indigo classic slogan print jackets for man,80% linen 20% cotton,Machine wash cold,68.17,8216969
+P6055,CA1004,PLAINED PANTS,Orange,S,orange elegant detailing plained pants for woman,50% cotton 50% polyester,Do not bleach,63.59,1112598
+P6056,CA1012,TECHNICAL  HOODIES,Mauv,XS,mauv elegant detailing technical  hoodies for kids,50% cotton 51% polyester,Machine wash cold,70.42,1454262
+P6057,CA1003,TECHNICAL SWEATERS,Yellow,XS,yellow elegant detailing technical sweaters for woman,95% acrylic 5% spandex,iron on low heat,8.74,6292763
+P6058,CA1011,FADED JACKETS,Blue,3XL,blue trendy faded jackets for kids,95% acrylic 6% spandex,Hand wash with mild detergent,78.43,6123809
+P6059,CA1015,EMBROIDERED OUTERWEAR,Khaki,L,khaki trendy embroidered outerwear for kids,60% wool 40% acrylic,hang to dry,71.5,7491157
+P6060,CA1002,CARTOON PRINT  HOODIES,Aquamarine,M,aquamarine stylish cartoon print hoodies for woman,70% viscose 30% nylon,Dry clean recommended,48.51,1750331
+P6061,CA1013,TEXTURED SWEATERS,Indigo,XS,indigo luxurious textured sweaters for kids,70% viscose 31% nylon,Machine wash cold,42.48,2804573
+P6062,CA1008,CARTOON PRINT SWEATERS,Khaki,S,khaki stylish cartoon print sweaters for man,70% viscose 30% nylon,tumble dry low,24.37,7489620
+P6063,CA1012,CONTRAST PRINT  HOODIES,Indigo,S,indigo modern  contrast print  hoodies for kids,50% cotton 51% polyester,Spot clean with damp cloth,44.6,7800413
+P6064,CA1005,QUARTER-ZIP OUTERWEAR,Khaki,2XL,khaki chic quarter-zip outerwear for woman,60% wool 40% acrylic,Spot clean with damp cloth,56.7,8103100
+P6065,CA1004,TECHNICAL PANTS,Indigo,M,indigo elegant detailing technical pants for woman,50% cotton 50% polyester,iron on low heat,45.85,6789731
+P6066,CA1008,TECHNICAL SWEATERS,Indigo,2XL,indigo elegant detailing technical sweaters for man,60% wool 40% acrylic,tumble dry low,39.88,907311
+P6067,CA1008,BOXY-FIT SWEATERS,Fuscia,XL,fuscia luxurious boxy-fit sweaters for man,70% viscose 31% nylon,hang to dry,29.32,8813307
+P6068,CA1004,CONTRAST PRINT PANTS,Puce,XL,puce modern  contrast print pants for woman,60% wool 40% acrylic,tumble dry low,71,5750905
+P6069,CA1014,VINTAGE-EFFECT  PANTS,Fuscia,XS,fuscia classic vintage-effect pants for kids,50% cotton 51% polyester,Hand wash in cold water,39.07,7603245
+P6070,CA1007,TECHNICAL  HOODIES,Fuscia,XS,fuscia elegant detailing technical  hoodies for man,50% cotton 50% polyester,Hand wash in cold water,39.07,7603245
+P6071,CA1013,QUARTER-ZIP SWEATERS,Red,XS,red chic quarter-zip sweaters for kids,60% wool 40% acrylic,iron on low heat,23.01,1641381
+P6072,CA1003,QUARTER-ZIP SWEATERS,Blue,XL,blue chic quarter-zip sweaters for woman,80% linen 20% cotton,do not wring or twist,42.46,3065991
+P6073,CA1008,EMBROIDERED SWEATERS,Mauv,XS,mauv trendy embroidered sweaters for man,50% cotton 50% polyester,Do not bleach,27.03,8111506
+P6074,CA1012,COMPACT  HOODIES,Khaki,2XL,khaki stylish compact  hoodies for kids,60% wool 41% acrylic,Spot clean with damp cloth,56.7,8103100
+P6075,CA1002,EMBROIDERED  HOODIES,Crimson,2XL,crimson trendy embroidered hoodies for woman,95% acrylic 5% spandex,Spot clean with damp cloth,66.72,913318
+P6076,CA1007,VINTAGE-EFFECT   HOODIES,Orange,XS,orange classic vintage-effect  hoodies for man,95% acrylic 5% spandex,Hand wash with mild detergent,21.3,2859483
+P6077,CA1008,ABSTRACT PRINT SWEATERS,Orange,3XL,orange modern  abstract print sweaters for man,80% linen 20% cotton,hang to dry,43.66,9778117
+P6078,CA1015,QUARTER-ZIP OUTERWEAR,Fuscia,XL,fuscia chic quarter-zip outerwear for kids,70% viscose 31% nylon,hang to dry,10.7,129674
+P6079,CA1003,SLOGAN PRINT SWEATERS,Indigo,L,indigo classic slogan print sweaters for woman,80% linen 20% cotton,iron on low heat,7.64,2537809
+P6080,CA1005,BOXY-FIT OUTERWEAR,Aquamarine,M,aquamarine luxurious boxy-fit outerwear for woman,70% viscose 30% nylon,hang to dry,29.15,1392075
+P6081,CA1003,COMPACT SWEATERS,Indigo,3XL,indigo stylish compact sweaters for woman,60% wool 40% acrylic,lay flat to dry,59.83,2614658
+P6082,CA1005,FLORAL PRINT OUTERWEAR,Violet,XS,violet chic floral print outerwear for woman,50% cotton 50% polyester,do not wring or twist,86.39,3985808
+P6083,CA1009,FADED PANTS,Aquamarine,M,aquamarine trendy faded pants for man,70% viscose 30% nylon,Dry clean recommended,48.51,1750331
+P6084,CA1009,TEXTURED PANTS,Khaki,3XL,khaki luxurious textured pants for man,50% cotton 51% polyester,tumble dry low,96.44,3612599
+P6085,CA1007,COMPACT  HOODIES,Goldenrod,2XL,goldenrod stylish compact  hoodies for man,70% viscose 30% nylon,Dry clean only,98.64,7589004
+P6086,CA1001,SLOGAN PRINT JACKETS,Fuscia,XL,fuscia classic slogan print jackets for woman,70% viscose 30% nylon,hang to dry,29.32,8813307
+P6087,CA1010,COMPACT OUTERWEAR,Blue,XL,blue stylish compact outerwear for man,80% linen 21% cotton,do not wring or twist,42.46,3065991
+P6088,CA1001,CONTRAST PRINT JACKETS,Indigo,2XL,indigo modern  contrast print jackets for woman,60% wool 40% acrylic,tumble dry low,39.88,907311
+P6089,CA1012,FADED  HOODIES,Fuscia,XS,fuscia trendy faded  hoodies for kids,95% acrylic 6% spandex,Hand wash in cold water,48.64,8325429
+P6090,CA1008,CONTRAST PRINT SWEATERS,Teal,M,teal modern  contrast print sweaters for man,60% wool 40% acrylic,lay flat to dry,78.28,268696
+P6091,CA1004,EMBROIDERED PANTS,Mauv,L,mauv trendy embroidered pants for woman,80% linen 20% cotton,Machine wash cold,60.92,4624743
+P6092,CA1013,CONTRAST PRINT SWEATERS,Green,XS,green modern  contrast print sweaters for kids,60% wool 40% acrylic,Dry clean recommended,11.33,8073808
+P6093,CA1010,QUARTER-ZIP OUTERWEAR,Turquoise,S,turquoise chic quarter-zip outerwear for man,70% viscose 31% nylon,Hand wash in cold water,25.48,3117597
+P6094,CA1014,SLOGAN PRINT PANTS,Turquoise,XS,turquoise classic slogan print pants for kids,80% linen 21% cotton,tumble dry low,83.78,2728574
+P6095,CA1007,SLOGAN PRINT  HOODIES,Teal,2XL,teal classic slogan print  hoodies for man,95% acrylic 5% spandex,Spot clean with damp cloth,71.5,129674
+P6096,CA1010,PLAINED OUTERWEAR,Goldenrod,L,goldenrod elegant detailing plained outerwear for man,70% viscose 31% nylon,lay flat to dry,23.17,5813653
+P6097,CA1010,ABSTRACT PRINT OUTERWEAR,Red,    ,red modern  abstract print outerwear for man,80% linen 21% cotton,Do not bleach,55.64,7471911
+P6098,CA1006,TEXTURED JACKETS,Red,2XL,red luxurious textured jackets for man,60% wool 40% acrylic,iron on low heat,35.76,3223837
+P6099,CA1008,TEXTURED SWEATERS,Maroon,XS,maroon luxurious textured sweaters for man,70% viscose 31% nylon,Hand wash with mild detergent,65.57,9194674
+P6100,CA1011,EMBROIDERED JACKETS,Violet,XS,violet trendy embroidered jackets for kids,70% viscose 31% nylon,Hand wash with mild detergent,36.15,5317684
+P6101,CA1013,CARTOON PRINT SWEATERS,Maroon,M,maroon stylish cartoon print sweaters for kids,70% viscose 30% nylon,Dry clean only,67.7,7854629
+P6102,CA1010,SLOGAN PRINT OUTERWEAR,Fuscia,XS,fuscia classic slogan print outerwear for man,80% linen 21% cotton,Hand wash separately in warm water,73.54,9244038
+P6103,CA1015,VINTAGE-EFFECT  OUTERWEAR,Indigo,2XL,indigo classic vintage-effect outerwear for kids,95% acrylic 6% spandex,tumble dry low,10.12,5356398
+P6104,CA1015,PLAINED OUTERWEAR,Crimson,L,crimson elegant detailing plained outerwear for kids,70% viscose 31% nylon,do not wring or twist,8.85,346707
+P6105,CA1004,BOXY-FIT PANTS,Maroon,3XL,maroon luxurious boxy-fit pants for woman,95% acrylic 5% spandex,iron on low heat,58.15,3774579
+P6106,CA1005,ABSTRACT PRINT OUTERWEAR,Crimson,2XL,crimson modern  abstract print outerwear for woman,95% acrylic 5% spandex,iron on low heat,68.28,31910
+P6107,CA1006,FADED JACKETS,Green,XS,green trendy faded jackets for man,80% linen 20% cotton,Dry clean recommended,11.33,8073808
+P6108,CA1008,PLAINED SWEATERS,Indigo,3XL,indigo elegant detailing plained sweaters for man,60% wool 40% acrylic,tumble dry low,41.19,2699429
+P6109,CA1011,QUARTER-ZIP JACKETS,Maroon,3XL,maroon chic quarter-zip jackets for kids,95% acrylic 6% spandex,iron on low heat,58.15,3774579
+P6110,CA1001,CARTOON PRINT JACKETS,Puce,L,puce stylish cartoon print jackets for woman,60% wool 40% acrylic,Hand wash with mild detergent,37.86,1672865
+P6111,CA1005,PLAINED OUTERWEAR,Khaki,2XL,khaki elegant detailing plained outerwear for woman,50% cotton 50% polyester,do not wring or twist,23.64,7768916
+P6112,CA1012,CARTOON PRINT  HOODIES,Violet,XS,violet stylish cartoon print  hoodies for kids,50% cotton 50% polyester,do not wring or twist,86.39,3985808
+P6113,CA1010,CONTRAST PRINT OUTERWEAR,Khaki,L,khaki modern  contrast print outerwear for man,80% linen 20% cotton,Dry clean recommended,23.18,8665116
+P6114,CA1002,FLORAL PRINT  HOODIES,Indigo,XS,indigo chic floral print hoodies for woman,60% wool 40% acrylic,do not wring or twist,50.6,3173532
+P6115,CA1001,ABSTRACT PRINT JACKETS,Teal,3XL,teal modern  abstract print jackets for woman,50% cotton 50% polyester,Do not bleach,87.36,6885455
+P6116,CA1011,CARTOON PRINT JACKETS,Green,S,green stylish cartoon print jackets for kids,50% cotton 50% polyester,Machine wash cold,24.65,7514827
+P6117,CA1008,QUARTER-ZIP SWEATERS,Orange,M,orange chic quarter-zip sweaters for man,60% wool 40% acrylic,Dry clean recommended,7.72,6760496
+P6118,CA1008,VINTAGE-EFFECT  SWEATERS,Violet,XL,violet classic vintage-effect sweaters for man,50% cotton 50% polyester,Do not bleach,94.92,1087776
+P6119,CA1005,FADED OUTERWEAR,Indigo,S,indigo trendy faded outerwear for woman,50% cotton 50% polyester,Spot clean with damp cloth,44.6,7800413
+P6120,CA1014,COMPACT PANTS,Yellow,XL,yellow stylish compact pants for kids,80% linen 20% cotton,Dry flat,69.1,7491157
+P6121,CA1013,EMBROIDERED SWEATERS,Pink,L,pink trendy embroidered sweaters for kids,50% cotton 50% polyester,iron on low heat,73.44,6781244
+P6122,CA1009,CARTOON PRINT PANTS,Indigo,XS,indigo stylish cartoon print pants for man,60% wool 41% acrylic,do not wring or twist,50.6,3173532
+P6123,CA1010,TEXTURED OUTERWEAR,Teal,3XL,teal luxurious textured outerwear for man,60% wool 40% acrylic,hang to dry,47.44,8952545
+P6124,CA1002,ABSTRACT PRINT  HOODIES,Goldenrod,L,goldenrod modern  abstract print hoodies for woman,70% viscose 30% nylon,lay flat to dry,23.17,5813653
+P6125,CA1006,CARTOON PRINT JACKETS,Fuscia,3XL,fuscia stylish cartoon print jackets for man,70% viscose 30% nylon,lay flat to dry,78.42,1447881
+P6126,CA1005,VINTAGE-EFFECT  OUTERWEAR,Pink,2XL,pink classic vintage-effect outerwear for woman,70% viscose 30% nylon,tumble dry low,19.69,9182799
+P6127,CA1003,CARTOON PRINT SWEATERS,Orange,2XL,orange stylish cartoon print sweaters for woman,70% viscose 30% nylon,Spot clean with damp cloth,33.35,2963859
+P6128,CA1009,PLAINED PANTS,Teal,3XL,teal elegant detailing plained pants for man,50% cotton 51% polyester,Do not bleach,87.36,6885455
+P6129,CA1007,FLORAL PRINT  HOODIES,Green,S,green chic floral print  hoodies for man,95% acrylic 5% spandex,Dry clean only,17.35,2951873
+P6130,CA1013,ABSTRACT PRINT SWEATERS,Orange,M,orange modern  abstract print sweaters for kids,80% linen 20% cotton,do not wring or twist,93.01,9302989
+P6131,CA1015,CONTRAST PRINT OUTERWEAR,Puce,L,puce modern  contrast print outerwear for kids,80% linen 20% cotton,Hand wash with mild detergent,35.76,824974
+P6132,CA1011,VINTAGE-EFFECT  JACKETS,Indigo,M,indigo classic vintage-effect jackets for kids,50% cotton 51% polyester,iron on low heat,45.85,6789731
+P6133,CA1010,FLORAL PRINT OUTERWEAR,Fuscia,S,fuscia chic floral print outerwear for man,60% wool 41% acrylic,Machine wash cold,12.81,5954854
+P6134,CA1001,TECHNICAL JACKETS,Violet,XL,violet elegant detailing technical jackets for woman,50% cotton 50% polyester,Do not bleach,94.92,1087776
+P6135,CA1001,VINTAGE-EFFECT  JACKETS,Maroon,XS,maroon classic vintage-effect jackets for woman,70% viscose 30% nylon,Hand wash with mild detergent,65.57,9194674
+P6136,CA1004,COMPACT PANTS,Violet,XS,violet stylish compact pants for woman,70% viscose 30% nylon,Hand wash with mild detergent,36.15,5317684
+P6137,CA1014,CARTOON PRINT PANTS,Green,S,green stylish cartoon print pants for kids,60% wool 41% acrylic,Dry clean only,17.35,2951873
+P6138,CA1012,TEXTURED  HOODIES,Pink,2XL,pink luxurious textured  hoodies for kids,70% viscose 30% nylon,tumble dry low,19.69,9182799
+P6139,CA1010,CARTOON PRINT OUTERWEAR,Orange,XL,orange stylish cartoon print outerwear for man,60% wool 41% acrylic,Do not bleach,23.02,9512242
+P6140,CA1007,CARTOON PRINT  HOODIES,Yellow,XS,yellow stylish cartoon print  hoodies for man,80% linen 20% cotton,Gentle cycle,10.12,824974
+P6141,CA1015,SLOGAN PRINT OUTERWEAR,Indigo,3XL,indigo classic slogan print outerwear for kids,80% linen 21% cotton,tumble dry low,41.19,2699429
+P6142,CA1003,CONTRAST PRINT SWEATERS,Fuscia,2XL,fuscia modern  contrast print sweaters for woman,50% cotton 50% polyester,iron on low heat,14.24,2763149
+P6143,CA1012,SLOGAN PRINT  HOODIES,Khaki,2XL,khaki classic slogan print  hoodies for kids,50% cotton 50% polyester,do not wring or twist,23.64,7768916
+P6144,CA1009,COMPACT PANTS,Violet,2XL,violet stylish compact pants for man,80% linen 20% cotton,Dry clean recommended,48,8682380
+P6145,CA1012,PLAINED  HOODIES,Indigo,XS,indigo elegant detailing plained  hoodies for kids,70% viscose 31% nylon,Dry clean recommended,79.24,7557953
+P6146,CA1007,TEXTURED  HOODIES,Puce,S,puce luxurious textured  hoodies for man,50% cotton 50% polyester,Gentle cycle,88.9,1988151
+P6147,CA1007,QUARTER-ZIP  HOODIES,Yellow,XL,yellow chic quarter-zip  hoodies for man,60% wool 40% acrylic,Dry flat,69.1,7491157
+P6148,CA1003,FLORAL PRINT SWEATERS,Orange,XL,orange chic floral print sweaters for woman,60% wool 40% acrylic,Do not bleach,23.02,9512242
+P6149,CA1002,VINTAGE-EFFECT   HOODIES,Khaki,3XL,khaki classic vintage-effect hoodies for woman,50% cotton 50% polyester,tumble dry low,96.44,3612599
+P6150,CA1002,TECHNICAL  HOODIES,Puce,XS,puce elegant detailing technical hoodies for woman,50% cotton 50% polyester,iron on low heat,81.52,7426330
+P6151,CA1006,FLORAL PRINT JACKETS,Maroon,M,maroon chic floral print jackets for man,80% linen 20% cotton,Dry clean only,67.7,7854629
+P6152,CA1015,BOXY-FIT OUTERWEAR,Blue,S,blue luxurious boxy-fit outerwear for kids,80% linen 20% cotton,tumble dry low,93.01,2728574
+P6153,CA1003,PLAINED SWEATERS,Fuscia,XS,fuscia elegant detailing plained sweaters for woman,80% linen 20% cotton,Hand wash separately in warm water,73.54,9244038
+P6154,CA1004,FLORAL PRINT PANTS,Green,S,green chic floral print pants for woman,50% cotton 50% polyester,Machine wash cold,24.65,7514827
+P6155,CA1009,SLOGAN PRINT PANTS,Red,2XL,red classic slogan print pants for man,80% linen 21% cotton,lay flat to dry,62.42,3389893
+P6156,CA1003,EMBROIDERED SWEATERS,Red,    ,red trendy embroidered sweaters for woman,80% linen 20% cotton,Do not bleach,55.64,7471911
+P6157,CA1007,PLAINED  HOODIES,Turquoise,XS,turquoise elegant detailing plained  hoodies for man,70% viscose 30% nylon,tumble dry low,83.78,2728574
+P6158,CA1006,CONTRAST PRINT JACKETS,Pink,3XL,pink modern  contrast print jackets for man,50% cotton 50% polyester,iron on low heat,15.8,5964307
+P6159,CA1002,TEXTURED  HOODIES,Fuscia,S,fuscia luxurious textured hoodies for woman,60% wool 40% acrylic,Machine wash cold,12.81,5954854
+P6160,CA1012,ABSTRACT PRINT  HOODIES,Indigo,M,indigo modern  abstract print  hoodies for kids,95% acrylic 5% spandex,Hand wash with mild detergent,71.06,9403905
+P6161,CA1003,FADED SWEATERS,Khaki,L,khaki trendy faded sweaters for woman,80% linen 20% cotton,Dry clean recommended,23.18,8665116
+P6162,CA1015,FLORAL PRINT OUTERWEAR,Puce,S,puce chic floral print outerwear for kids,60% wool 41% acrylic,Gentle cycle,88.9,1988151
+P6163,CA1015,COMPACT OUTERWEAR,Orange,M,orange stylish compact outerwear for kids,80% linen 21% cotton,Dry clean recommended,83.78,4060270
+P6164,CA1012,QUARTER-ZIP  HOODIES,Aquamarine,M,aquamarine chic quarter-zip  hoodies for kids,70% viscose 31% nylon,hang to dry,29.15,1392075
+P6165,CA1002,BOXY-FIT  HOODIES,Aquamarine,XS,aquamarine luxurious boxy-fit hoodies for woman,70% viscose 30% nylon,do not wring or twist,84.62,1462802
+P6166,CA1013,FLORAL PRINT SWEATERS,Aquamarine,3XL,aquamarine chic floral print sweaters for kids,95% acrylic 5% spandex,Gentle cycle,10.38,4948375
+P6167,CA1007,EMBROIDERED  HOODIES,Violet,L,violet trendy embroidered  hoodies for man,80% linen 20% cotton,Hand wash separately in warm water,55.34,9185745
+P6168,CA1004,VINTAGE-EFFECT  PANTS,Teal,XS,teal classic vintage-effect pants for woman,80% linen 20% cotton,lay flat to dry,69.15,4760413
+P6169,CA1004,QUARTER-ZIP PANTS,Fuscia,2XL,fuscia chic quarter-zip pants for woman,70% viscose 30% nylon,Hand wash in cold water,34.73,8701419
+P6170,CA1008,COMPACT SWEATERS,Khaki,L,khaki stylish compact sweaters for man,95% acrylic 6% spandex,hang to dry,10.77,3623751
+P6171,CA1014,FADED PANTS,Yellow,XS,yellow trendy faded pants for kids,70% viscose 30% nylon,Gentle cycle,10.12,824974
+P6172,CA1006,ABSTRACT PRINT JACKETS,Yellow,XS,yellow modern  abstract print jackets for man,50% cotton 50% polyester,Machine wash cold,10.7,2725519
+P6173,CA1002,COMPACT  HOODIES,Teal,2XL,teal stylish compact hoodies for woman,95% acrylic 5% spandex,Hand wash with mild detergent,91.54,1148499
+P6174,CA1003,ABSTRACT PRINT SWEATERS,Pink,XS,pink modern  abstract print sweaters for woman,60% wool 40% acrylic,Hand wash separately in warm water,61.25,616687
+P6175,CA1014,PLAINED PANTS,Yellow,XS,yellow elegant detailing plained pants for kids,50% cotton 51% polyester,Machine wash cold,10.7,2725519
+P6176,CA1009,BOXY-FIT PANTS,Maroon,2XL,maroon luxurious boxy-fit pants for man,70% viscose 30% nylon,Hand wash separately in warm water,44.53,3534420
+P6177,CA1011,FLORAL PRINT JACKETS,Yellow,M,yellow chic floral print jackets for kids,50% cotton 51% polyester,Dry clean recommended,42.92,9205421
+P6178,CA1009,FLORAL PRINT PANTS,Green,2XL,green chic floral print pants for man,80% linen 20% cotton,Dry clean recommended,92.75,8858098
+P6179,CA1004,TEXTURED PANTS,Orange,XS,orange luxurious textured pants for woman,60% wool 40% acrylic,Dry flat,49.71,49287
+P6180,CA1005,EMBROIDERED OUTERWEAR,Indigo,M,indigo trendy embroidered outerwear for woman,95% acrylic 5% spandex,Hand wash with mild detergent,71.06,9403905
+P6181,CA1006,VINTAGE-EFFECT  JACKETS,Indigo,XS,indigo classic vintage-effect jackets for man,70% viscose 30% nylon,Machine wash cold,42.48,2804573
+P6182,CA1002,FADED  HOODIES,Red,3XL,red trendy faded hoodies for woman,80% linen 20% cotton,Hand wash with mild detergent,67.77,6345796
+P6183,CA1014,EMBROIDERED PANTS,Goldenrod,2XL,goldenrod trendy embroidered pants for kids,95% acrylic 6% spandex,Dry clean only,98.64,7589004
+P6184,CA1009,CONTRAST PRINT PANTS,Red,3XL,red modern  contrast print pants for man,80% linen 21% cotton,Hand wash with mild detergent,67.77,6345796
+P6185,CA1003,BOXY-FIT SWEATERS,Turquoise,S,turquoise luxurious boxy-fit sweaters for woman,70% viscose 30% nylon,Hand wash in cold water,25.48,3117597
+P6186,CA1008,FADED SWEATERS,Puce,L,puce trendy faded sweaters for man,60% wool 41% acrylic,Hand wash with mild detergent,37.86,1672865
+P6187,CA1007,ABSTRACT PRINT  HOODIES,Crimson,L,crimson modern  abstract print  hoodies for man,95% acrylic 5% spandex,do not wring or twist,8.85,346707
+P6188,CA1014,TEXTURED PANTS,Orange,XS,orange luxurious textured pants for kids,50% cotton 51% polyester,Hand wash with mild detergent,21.3,2859483
+P6189,CA1002,CONTRAST PRINT  HOODIES,Mauv,S,mauv modern  contrast print hoodies for woman,80% linen 20% cotton,Spot clean with damp cloth,36.5,1973732
+P6190,CA1009,QUARTER-ZIP PANTS,Aquamarine,XS,aquamarine chic quarter-zip pants for man,70% viscose 31% nylon,do not wring or twist,84.62,1462802
+P6191,CA1006,COMPACT JACKETS,Pink,L,pink stylish compact jackets for man,60% wool 40% acrylic,iron on low heat,73.44,6781244
+P6192,CA1014,BOXY-FIT PANTS,Teal,2XL,teal luxurious boxy-fit pants for kids,70% viscose 30% nylon,Spot clean with damp cloth,71.5,129674
+P6193,CA1013,SLOGAN PRINT SWEATERS,Fuscia,XL,fuscia classic slogan print sweaters for kids,70% viscose 30% nylon,Hand wash with mild detergent,95.06,6995441
+P6194,CA1001,PLAINED JACKETS,Blue,S,blue elegant detailing plained jackets for woman,70% viscose 30% nylon,tumble dry low,46.69,490790
+P6195,CA1002,PLAINED  HOODIES,Red,2XL,red elegant detailing plained hoodies for woman,80% linen 20% cotton,lay flat to dry,62.42,3389893
+P6196,CA1008,SLOGAN PRINT SWEATERS,Blue,S,blue classic slogan print sweaters for man,70% viscose 30% nylon,tumble dry low,46.69,490790
+P6197,CA1010,BOXY-FIT OUTERWEAR,Indigo,L,indigo luxurious boxy-fit outerwear for man,80% linen 20% cotton,iron on low heat,7.64,2537809
+P6198,CA1006,EMBROIDERED JACKETS,Orange,M,orange trendy embroidered jackets for man,80% linen 20% cotton,do not wring or twist,93.01,9302989
+P6199,CA1004,SLOGAN PRINT PANTS,Crimson,L,crimson classic slogan print pants for woman,70% viscose 30% nylon,Hand wash separately in warm water,22.04,2192116
+P6200,CA1004,ABSTRACT PRINT PANTS,Indigo,XS,indigo modern  abstract print pants for woman,70% viscose 30% nylon,Dry clean recommended,79.24,7557953
+P6201,CA1004,FADED PANTS,Puce,2XL,puce trendy faded pants for woman,80% linen 20% cotton,Dry flat,19.11,6294420
+P6202,CA1011,TEXTURED JACKETS,Teal,XS,teal luxurious textured jackets for kids,80% linen 20% cotton,lay flat to dry,69.15,4760413
+P6203,CA1013,VINTAGE-EFFECT  SWEATERS,Crimson,3XL,crimson classic vintage-effect sweaters for kids,50% cotton 50% polyester,do not wring or twist,63.29,6315566
+P6204,CA1011,BOXY-FIT JACKETS,Crimson,L,crimson luxurious boxy-fit jackets for kids,70% viscose 31% nylon,Hand wash separately in warm water,22.04,2192116
+P6205,CA1005,CONTRAST PRINT OUTERWEAR,Mauv,XS,mauv modern  contrast print outerwear for woman,50% cotton 50% polyester,Machine wash cold,70.42,1454262
+P6206,CA1011,ABSTRACT PRINT JACKETS,Mauv,L,mauv modern  abstract print jackets for kids,80% linen 20% cotton,Machine wash cold,60.92,4624743
+P6207,CA1007,CONTRAST PRINT  HOODIES,Red,3XL,red modern  contrast print  hoodies for man,60% wool 40% acrylic,tumble dry low,99.92,5356398
+P6208,CA1001,BOXY-FIT JACKETS,Orange,M,orange luxurious boxy-fit jackets for woman,60% wool 40% acrylic,Dry clean recommended,7.72,6760496
+P6209,CA1013,PLAINED SWEATERS,Crimson,2XL,crimson elegant detailing plained sweaters for kids,95% acrylic 5% spandex,iron on low heat,68.28,31910
+P6210,CA1003,TEXTURED SWEATERS,Yellow,M,yellow luxurious textured sweaters for woman,50% cotton 50% polyester,Dry clean recommended,42.92,9205421
+P6211,CA1010,FADED OUTERWEAR,Orange,2XL,orange trendy faded outerwear for man,70% viscose 31% nylon,Spot clean with damp cloth,33.35,2963859
+P6212,CA1006,TECHNICAL JACKETS,Crimson,3XL,crimson elegant detailing technical jackets for man,80% linen 20% cotton,do not wring or twist,63.29,6315566
+P6213,CA1014,CONTRAST PRINT PANTS,Puce,S,puce modern  contrast print pants for kids,80% linen 21% cotton,do not wring or twist,25.46,3241822
+P6214,CA1010,TECHNICAL OUTERWEAR,Fuscia,2XL,fuscia elegant detailing technical outerwear for man,50% cotton 51% polyester,iron on low heat,14.24,2763149
+P6215,CA1005,COMPACT OUTERWEAR,Pink,XL,pink stylish compact outerwear for woman,70% viscose 30% nylon,tumble dry low,25.58,1630780
+P6216,CA1005,SLOGAN PRINT OUTERWEAR,Red,S,red classic slogan print outerwear for woman,70% viscose 30% nylon,do not wring or twist,31.12,4336115
+P6217,CA1013,FADED SWEATERS,Fuscia,3XL,fuscia trendy faded sweaters for kids,60% wool 41% acrylic,lay flat to dry,78.42,1447881
+P6218,CA1002,QUARTER-ZIP  HOODIES,Violet,2XL,violet chic quarter-zip hoodies for woman,80% linen 20% cotton,Dry clean recommended,48,8682380
+P6219,CA1002,SLOGAN PRINT  HOODIES,Maroon,2XL,maroon classic slogan print hoodies for woman,70% viscose 30% nylon,Hand wash separately in warm water,44.53,3534420
+P6220,CA1010,VINTAGE-EFFECT  OUTERWEAR,Yellow,XS,yellow classic vintage-effect outerwear for man,95% acrylic 6% spandex,iron on low heat,8.74,6292763
+P6221,CA1012,FLORAL PRINT  HOODIES,Orange,XS,orange chic floral print  hoodies for kids,60% wool 41% acrylic,Dry flat,49.71,49287
+P6222,CA1006,BOXY-FIT JACKETS,Red,XS,red luxurious boxy-fit jackets for man,95% acrylic 5% spandex,iron on low heat,23.01,1641381
+P6223,CA1011,SLOGAN PRINT JACKETS,Orange,S,orange classic slogan print jackets for kids,50% cotton 50% polyester,Do not bleach,63.59,1112598
+P6224,CA1005,TECHNICAL OUTERWEAR,Yellow,2XL,yellow elegant detailing technical outerwear for woman,95% acrylic 5% spandex,Hand wash in cold water,61.92,6429166
+P6225,CA1014,FLORAL PRINT PANTS,Red,2XL,red chic floral print pants for kids,80% linen 20% cotton,iron on low heat,35.76,3223837
+P6226,CA1015,TEXTURED OUTERWEAR,Violet,XL,violet luxurious textured outerwear for kids,60% wool 40% acrylic,Do not bleach,25.46,7603245
+P6227,CA1001,TEXTURED JACKETS,Green,2XL,green luxurious textured jackets for woman,80% linen 20% cotton,Dry clean recommended,92.75,8858098
+P6228,CA1005,CARTOON PRINT OUTERWEAR,Fuscia,XS,fuscia stylish cartoon print outerwear for woman,95% acrylic 5% spandex,Hand wash in cold water,48.64,8325429
+P6229,CA1014,ABSTRACT PRINT PANTS,Violet,L,violet modern  abstract print pants for kids,95% acrylic 6% spandex,Hand wash separately in warm water,55.34,9185745
+P6230,CA1011,PLAINED JACKETS,Pink,XS,pink elegant detailing plained jackets for kids,60% wool 41% acrylic,Hand wash separately in warm water,61.25,616687
+P6231,CA1008,FLORAL PRINT SWEATERS,Orange,L,orange chic floral print sweaters for man,95% acrylic 5% spandex,do not wring or twist,53.39,5975905
+P6232,CA1015,CARTOON PRINT OUTERWEAR,Orange,L,orange stylish cartoon print outerwear for kids,60% wool 41% acrylic,do not wring or twist,53.39,5975905

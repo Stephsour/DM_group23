@@ -1,0 +1,120 @@
+---
+title: "Test"
+output: html_document
+date: "2024-03-05"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(RSQLite)
+```
+
+```{r}
+file_path <- "Data/"
+all_files <- list.files(file_path)
+```
+
+```{r establish connection}
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+```
+
+```{r message = FALSE, warning = FALSE}
+# entities with dates "Customer.csv", "Invoice.csv", "Payment.csv", "Sale.csv", "Refund.csv"
+if ("Customer.csv" %in% all_files) {
+  this_file_path <- paste0(file_path,"Customer.csv")
+  file_content <- readr::read_csv(this_file_path)
+  file_content$DOB <- as.character(as.Date(file_content$DOB,format = "%d/%m/%Y"))
+  file_content$PhoneNumber <- as.character(paste0("+",file_content$PhoneNumber))
+  RSQLite::dbWriteTable(database_connection, "Customer0", file_content, overwrite = T)
+
+  insert_query <- paste0("INSERT INTO Customer SELECT * FROM Customer0;")
+  RSQLite::dbExecute(database_connection, insert_query)
+  
+  drop_query <- paste0("DROP TABLE IF EXISTS Customer0;")
+  RSQLite::dbExecute(database_connection, drop_query)
+} 
+
+if ("Invoice.csv" %in% all_files) {
+  this_file_path <- paste0(file_path,"Invoice.csv")
+  file_content <- readr::read_csv(this_file_path)
+  file_content$InvoiceDate <- as.character(as.Date(file_content$InvoiceDate,format = "%d/%m/%Y"))
+  RSQLite::dbWriteTable(database_connection, "Invoice0", file_content, overwrite = T)
+
+  insert_query <- paste0("INSERT INTO Invoice SELECT * FROM Invoice0;")
+  RSQLite::dbExecute(database_connection, insert_query)
+  
+  drop_query <- paste0("DROP TABLE IF EXISTS Invoice0;")
+  RSQLite::dbExecute(database_connection, drop_query)    
+}
+
+if ("Payment.csv" %in% all_files){
+  this_file_path <- paste0(file_path,"Payment.csv")
+  file_content <- readr::read_csv(this_file_path)
+  file_content$PaymentDate <- as.character(as.Date(file_content$PaymentDate,format = "%d/%m/%Y"))
+  RSQLite::dbWriteTable(database_connection, "Payment0", file_content, overwrite = T)
+
+  insert_query <- paste0("INSERT INTO Payment SELECT * FROM Payment0;")
+  RSQLite::dbExecute(database_connection, insert_query)
+  
+  drop_query <- paste0("DROP TABLE IF EXISTS Payment0;")
+  RSQLite::dbExecute(database_connection, drop_query)
+}
+
+if ("Sale.csv" %in% all_files) {
+  this_file_path <- paste0(file_path,"Sale.csv")
+  file_content <- readr::read_csv(this_file_path)
+  file_content$StartDate <- as.character(as.Date(file_content$StartDate,format = "%d/%m/%Y"))
+  file_content$EndDate <- as.character(as.Date(file_content$EndDate,format = "%d/%m/%Y"))
+  RSQLite::dbWriteTable(database_connection, "Sale0", file_content, overwrite = T)
+  
+  insert_query <- paste0("INSERT INTO Sale SELECT * FROM Sale0;")
+  RSQLite::dbExecute(database_connection, insert_query)
+  
+  drop_query <- paste0("DROP TABLE IF EXISTS Sale0;")
+  RSQLite::dbExecute(database_connection, drop_query)
+}
+
+if ("Refund.csv" %in% all_files) {
+  this_file_path <- paste0(file_path,"Refund.csv")
+  file_content <- readr::read_csv(this_file_path)
+  file_content$RefundDate <- as.character(as.Date(file_content$RefundDate,format = "%d/%m/%Y"))
+  RSQLite::dbWriteTable(database_connection, "Refund0", file_content, overwrite = T)
+  insert_query <- paste0("INSERT INTO Refund SELECT * FROM Refund0;")
+  RSQLite::dbExecute(database_connection, insert_query)
+  
+  drop_query <- paste0("DROP TABLE IF EXISTS Refund0;")
+  RSQLite::dbExecute(database_connection, drop_query)
+}
+```
+
+
+```{r message = FALSE, warning = FALSE}
+remaining <- all_files[!(all_files %in% c("Customer.csv", "Invoice.csv", "Payment.csv", "Sale.csv", "Refund.csv"))]
+for (file in remaining) {
+  this_file_path <- paste0(file_path,file)
+  file_content <- readr::read_csv(this_file_path)
+  
+  entity <- gsub(".csv","",file)
+  table_name <- gsub(".csv","0",file)
+
+
+  RSQLite::dbWriteTable(database_connection, table_name, file_content, overwrite = T)
+  insert_query <- paste0("INSERT INTO ",entity," SELECT * FROM ",table_name,";")
+  RSQLite::dbExecute(database_connection, insert_query)
+  
+  drop_query <- paste0("DROP TABLE IF EXISTS ", table_name,";")
+  RSQLite::dbExecute(database_connection, drop_query)
+
+}
+```
+
+```{r}
+RSQLite::dbDisconnect(database_connection)
+```
+
+
+
+

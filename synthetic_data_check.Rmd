@@ -1,0 +1,101 @@
+---
+title: "Basic Checks"
+output: html_document
+date: "2024-03-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(RSQLite)
+```
+
+```{r establish connection}
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+```
+
+```{r loop, message = FALSE, warning = FALSE}
+all_files <- list.files("Data/")
+
+for (file in all_files) {
+  file_path <-  paste0("Data/",file)
+  file_content <-  readr::read_csv(file_path)
+  
+  num_rows <- nrow(file_content)
+  num_columns <- ncol(file_content)
+  
+  print(paste0("The file: ", file,
+               " has ",
+               format(num_rows, big.mark = ","),
+                " rows and ",
+                num_columns, " columns."))
+}
+```
+```{r check primary, message = FALSE, warning = FALSE}
+entities <- all_files[!(all_files %in% c("Purchase.csv", "ProductSale.csv", "SupplierProduct.csv"))]
+relationships <- c("Purchase.csv", "ProductSale.csv", "SupplierProduct.csv")
+
+for (variable in entities) {
+  file_path <-  paste0("Data/",variable)
+  file_content <-  readr::read_csv(file_path)
+  num_rows <- nrow(file_content)
+  print(num_rows)
+  print(paste0("Checking for: ",variable))
+  print(paste0(" is ", nrow(unique(file_content[,1])) == num_rows))
+}
+
+for (variable in relationships) {
+  file_path <- paste0("Data/", variable)
+  file_content <- readr::read_csv(file_path)
+  num_rows <- nrow(file_content)
+  print(num_rows)
+  print(paste0("Checking for: ",variable))
+  print(paste0(" is ", nrow(unique(file_content[,1:2])) == num_rows))          
+}
+```
+
+```{r message = FALSE, warning = FALSE}
+#Each invoice must contain purchased product
+file_path <- "Data/Purchase.csv"
+file_content <- readr::read_csv(file_path)
+#There are 500 invoices
+nrow(unique(file_content[,2])) 
+#There are 200 refunds, and blank
+nrow(unique(file_content[,3]))
+```
+
+```{r message = FALSE, warning = FALSE}
+#Each invoice must have a payment record
+file_path <- "Data/Payment.csv"
+file_content <- readr::read_csv(file_path)
+#There are 500 invoices
+nrow(unique(file_content[,2]))
+```
+
+```{r message = FALSE, warning = FALSE}
+#Each sale event must at least apply on one product
+file_path <- "Data/ProductSale.csv"
+file_content <- readr::read_csv(file_path)
+#There are 20 sale events recorded
+nrow(unique(file_content[,2]))
+```
+
+```{r message = FALSE, warning = FALSE}
+#Each product category must contain at least one product
+file_path <- "Data/Product.csv"
+file_content <- readr::read_csv(file_path)
+#There are 15 product categories
+nrow(unique(file_content[,2]))
+```
+
+```{r message = FALSE, warning = FALSE}
+#Each product must be supplied by a supplier
+file_path <- "Data/SupplierProduct.csv"
+file_content <- readr::read_csv(file_path)
+#There are 200 products
+nrow(unique(file_content[,2]))
+```
+
+```{r}
+RSQLite::dbDisconnect(database_connection)
+```
