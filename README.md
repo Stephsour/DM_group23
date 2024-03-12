@@ -17,3 +17,8 @@ or
 
 in terminal: sqlite3 zara.db
 then type the SQL statements
+
+Example
+For entry(email) in new_data NOT in data
+	Entry.append
+	Customer_id(Entry) = Customer_id(Total) + 1
