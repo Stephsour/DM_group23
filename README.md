@@ -5,15 +5,13 @@ Steps to play around:
 
 2. Import data: run the file load_data.Rmd
 
-3. Check for referential integrity: run the file referential_integrity.Rmd 
+3. Print referential integrity: run the file referential_integrity.Rmd 
 
-4. Check for duplicate entries: in terminal, run sqlite3 zara.db < duplicate_entries.sql (should show nth since there are no duplicate entries)
+4. Check for duplicate entries in the database: in terminal, run sqlite3 zara.db < duplicate_entries.sql (should show nth since there are no duplicate entries)
 
-5. Check for any entry error (e.g. start date after end date etc.): in terminal, run sqlite3 zara.db < entryerror.sql
+5. Check for any entry error (e.g. start date after end date etc.) in the database: in terminal, run sqlite3 zara.db < entryerror.sql
 
-6. Check for any formatting error (date, email): in terminal, run sqlite3 zara.db < format.sql
-
-7. if want to try retrieving data, you can either do it by creating an sql script then use the command: sqlite3 zara.db < the script
+6. if want to try retrieving data, you can either do it by creating an sql script then use the command: sqlite3 zara.db < the script
 
 or 
 
