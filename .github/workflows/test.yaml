@@ -25,17 +25,14 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           Rscript -e 'install.packages(c("dplyr"),("readr"),("RSQLite")'
-#      - name: Execute R script
-#        run: |
-#          Rscript R/regression_plot.R
-#      - name: Add files
+      - name: Execute Load data file
+        run: |
+          Rscript R/load_data.R, R/referential_integrity
+      - name: Appending commit to user
         run: |
           git config --global user.email "geckeos@gmail.com"
           git config --global user.name "geckeos"
           git add --all figures/
-      - name: Commit files
-        run: |
-#          git commit -m "Add regression plot figure"
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
