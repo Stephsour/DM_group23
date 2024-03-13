@@ -27,7 +27,7 @@ jobs:
           Rscript -e 'install.packages(c("dplyr","readr","RSQLite"))'
       - name: Execute Load data file
         run: |
-          Rscript R/load_data.R, R/referential_integrity
+          Rscript R/load_data.R; R/referential_integrity.R
       - name: Appending commit to user
         run: |
           git config --global user.email "geckeos@gmail.com"
