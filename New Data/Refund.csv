@@ -1,0 +1,51 @@
+RefundID,RefundQuantity,Reason,Status,RefundDate,TransactionRef
+RE7253,1,Poor quality material,Completed,18/2/2024,TR5730
+RE7254,2,Item arrived late,Rejected,20/1/2024,
+RE7255,5,Wrong color received,Cancelled,26/12/2023,
+RE7256,5,Received damaged item,Waiting for Approval,26/1/2024,
+RE7257,1,Item not as described,Pending,1/1/2024,TR7856
+RE7258,2,Item didn't meet expectations,Rejected,24/2/2024,
+RE7259,1,Item arrived late,Approved,2/2/2024,
+RE7260,3,Received wrong size,On Hold,17/2/2024,TR5576
+RE7261,1,Item didn't meet expectations,Waiting for Approval,2/4/2024,
+RE7262,2,Wrong color received,Approved,10/2/2024,
+RE7263,3,Item didn't fit properly,Rejected,25/12/2023,
+RE7264,4,Item didn't fit properly,Pending,5/2/2024,TR4786
+RE7265,3,Poor quality material,Rejected,11/12/2023,
+RE7266,2,Item didn't match online photos,Cancelled,21/12/2023,
+RE7267,1,Received damaged item,Processing,11/3/2024,TR5006
+RE7268,4,Item didn't meet expectations,On Hold,22/12/2023,TR2504
+RE7269,1,Wrong color received,Cancelled,8/2/2024,
+RE7270,1,Item arrived late,On Hold,13/12/2023,TR8031
+RE7271,3,Item didn't fit properly,Approved,30/12/2023,
+RE7272,1,Item not as described,Completed,12/3/2024,TR1874
+RE7273,7,Poor quality material,Approved,18/1/2024,
+RE7274,2,Item didn't match online photos,Rejected,8/1/2024,
+RE7275,3,Item didn't fit properly,Approved,16/12/2023,
+RE7276,3,Item didn't match online photos,Processing,24/1/2024,TR4305
+RE7277,4,Received wrong size,Rejected,29/12/2023,
+RE7278,2,Item arrived late,Cancelled,14/3/2024,
+RE7279,1,Item didn't match online photos,Pending,9/2/2024,TR5773
+RE7280,6,Item didn't meet expectations,Waiting for Approval,5/2/2024,
+RE7281,1,Changed mind about purchase,Waiting for Approval,11/2/2024,
+RE7282,1,Item didn't match online photos,Rejected,15/3/2024,
+RE7283,4,Changed mind about purchase,Waiting for Approval,15/2/2024,
+RE7284,2,Poor quality material,Processing,20/1/2024,TR7181
+RE7285,3,Item didn't meet expectations,Processing,6/1/2024,TR5404
+RE7286,2,Item didn't match online photos,Approved,13/3/2024,
+RE7287,4,Item didn't meet expectations,Rejected,20/3/2024,
+RE7288,8,Item didn't match online photos,Rejected,3/1/2024,
+RE7289,8,Received damaged item,On Hold,5/3/2024,TR4962
+RE7290,4,Item not as described,Rejected,21/2/2024,
+RE7291,1,Item didn't meet expectations,Cancelled,9/2/2024,
+RE7292,6,Item not as described,Processing,16/12/2023,TR4280
+RE7293,3,Item didn't fit properly,Pending,1/3/2024,TR4934
+RE7294,1,Wrong color received,Pending,10/2/2024,TR5824
+RE7295,4,Item arrived late,On Hold,12/2/2024,TR5194
+RE7296,5,Received wrong size,Approved,21/2/2024,
+RE7297,2,Item arrived late,On Hold,21/2/2024,TR7735
+RE7298,7,Poor quality material,Processing,6/3/2024,TR8915
+RE7299,2,Item didn't match online photos,Waiting for Approval,20/12/2023,
+RE7300,2,Poor quality material,Approved,22/3/2024,
+RE7301,1,Poor quality material,Approved,17/3/2024,
+RE7302,4,Item not as described,Cancelled,2/4/2024,

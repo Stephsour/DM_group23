@@ -1,201 +1,201 @@
 RefundID,RefundQuantity,Reason,Status,RefundDate,TransactionRef
-RE7052,4,Item arrived late,Pending,16/5/2020,TR5180
-RE7053,1,Item didn't match online photos,Pending,30/7/2021,TR8171
-RE7054,4,Item arrived late,Approved,26/10/2021,
-RE7055,1,Received damaged item,Pending,15/3/2020,TR2374
-RE7056,10,Wrong color received,On Hold,6/3/2023,TR7928
-RE7057,1,Item didn't fit properly,Completed,3/9/2019,TR4821
-RE7058,4,Item didn't match online photos,On Hold,24/12/2020,TR2168
-RE7059,3,Item didn't match online photos,Pending,30/6/2021,TR2005
-RE7060,10,Item arrived late,Waiting for Approval,9/11/2022,
-RE7061,5,Wrong color received,Cancelled,31/12/2021,
-RE7062,2,Wrong color received,Cancelled,10/3/2021,
-RE7063,1,Wrong color received,Waiting for Approval,12/2/2022,
-RE7064,1,Item didn't match online photos,Completed,31/7/2023,TR5535
-RE7065,2,Item didn't match online photos,Processing,23/11/2023,TR4173
-RE7066,2,Item arrived late,Rejected,20/7/2022,
-RE7067,3,Received wrong size,Waiting for Approval,18/4/2023,
-RE7068,10,Item didn't fit properly,Rejected,17/12/2020,
-RE7069,6,Wrong color received,Completed,29/9/2019,TR8968
-RE7070,8,Item didn't meet expectations,Completed,20/7/2021,TR1337
-RE7071,1,Item not as described,On Hold,27/11/2023,TR4470
-RE7072,3,Item didn't meet expectations,Approved,31/8/2021,
-RE7073,1,Wrong color received,Pending,12/12/2021,TR1525
-RE7074,6,Item didn't match online photos,Pending,10/1/2022,TR4612
-RE7075,2,Poor quality material,Waiting for Approval,18/12/2022,
-RE7076,4,Received damaged item,Approved,21/4/2022,
-RE7077,1,Poor quality material,Completed,22/11/2023,TR8941
-RE7078,3,Item arrived late,Cancelled,23/10/2019,
-RE7079,3,Wrong color received,Processing,31/3/2020,TR3801
-RE7080,5,Item not as described,Rejected,24/9/2021,
-RE7081,3,Wrong color received,Rejected,15/6/2020,
-RE7082,7,Item not as described,Cancelled,27/9/2022,
-RE7083,1,Received wrong size,On Hold,18/3/2020,TR1690
-RE7084,6,Item didn't fit properly,Waiting for Approval,3/1/2022,
-RE7085,4,Item didn't match online photos,Approved,24/11/2020,
-RE7086,2,Poor quality material,Cancelled,5/11/2019,
-RE7087,3,Item arrived late,Rejected,22/7/2023,
-RE7088,10,Received wrong size,Cancelled,13/1/2022,
-RE7089,3,Wrong color received,On Hold,29/3/2021,TR3701
-RE7090,6,Item didn't fit properly,On Hold,21/7/2023,TR4056
-RE7091,1,Item arrived late,Approved,2/5/2023,
-RE7092,3,Received wrong size,Waiting for Approval,8/8/2022,
-RE7093,4,Item not as described,Rejected,20/1/2021,
-RE7094,1,Wrong color received,Rejected,19/7/2021,
-RE7095,3,Received damaged item,Pending,16/2/2020,TR5026
-RE7096,1,Changed mind about purchase,Rejected,27/2/2023,
-RE7097,5,Item didn't fit properly,Approved,22/8/2020,
-RE7098,3,Item didn't fit properly,Pending,13/7/2019,TR3493
-RE7099,2,Item didn't meet expectations,Waiting for Approval,5/12/2023,
-RE7100,3,Received damaged item,Waiting for Approval,21/6/2019,
-RE7101,3,Item arrived late,Completed,9/4/2022,TR4781
-RE7102,1,Wrong color received,Rejected,12/2/2020,
-RE7103,1,Wrong color received,Cancelled,18/8/2022,
-RE7104,2,Changed mind about purchase,On Hold,11/1/2020,TR2344
-RE7105,5,Changed mind about purchase,Waiting for Approval,28/12/2020,
-RE7106,3,Wrong color received,Processing,12/8/2022,TR2814
-RE7107,5,Poor quality material,Processing,4/10/2022,TR7003
-RE7108,7,Item didn't meet expectations,Approved,25/9/2021,
-RE7109,1,Poor quality material,Completed,18/5/2022,TR8682
-RE7110,7,Item didn't match online photos,Approved,2/10/2020,
-RE7111,1,Item didn't match online photos,Completed,25/4/2019,TR6747
-RE7112,7,Changed mind about purchase,Cancelled,5/1/2021,
-RE7113,7,Wrong color received,Cancelled,12/1/2022,
-RE7114,3,Item didn't fit properly,Waiting for Approval,22/11/2023,
-RE7115,2,Item arrived late,Cancelled,26/5/2023,
-RE7116,3,Received wrong size,Rejected,8/12/2022,
-RE7117,5,Item didn't match online photos,Pending,21/10/2019,TR2298
-RE7118,8,Item arrived late,Completed,23/10/2023,TR7227
-RE7119,3,Item arrived late,Pending,25/4/2023,TR6684
-RE7120,6,Item didn't meet expectations,Processing,17/8/2022,TR4790
-RE7121,2,Item didn't fit properly,Approved,1/3/2019,
-RE7122,1,Item didn't match online photos,Cancelled,8/8/2022,
-RE7123,1,Wrong color received,Waiting for Approval,17/12/2021,
-RE7124,5,Poor quality material,On Hold,20/11/2022,TR3975
-RE7125,2,Received damaged item,Approved,4/1/2021,
-RE7126,7,Poor quality material,Rejected,11/2/2024,
-RE7127,2,Received damaged item,Cancelled,23/2/2022,
-RE7128,8,Wrong color received,Rejected,28/1/2023,
-RE7129,5,Received damaged item,Pending,5/5/2022,TR3727
-RE7130,1,Received wrong size,Waiting for Approval,6/12/2023,
-RE7131,1,Changed mind about purchase,On Hold,3/2/2024,TR6186
-RE7132,1,Item didn't fit properly,Completed,1/8/2021,TR8654
-RE7133,6,Received damaged item,Pending,18/12/2019,TR2098
-RE7134,4,Changed mind about purchase,Approved,21/12/2022,
-RE7135,8,Wrong color received,Pending,8/2/2021,TR1174
-RE7136,8,Item arrived late,Approved,4/10/2023,
-RE7137,6,Received wrong size,Processing,5/5/2020,TR8279
-RE7138,5,Item not as described,Waiting for Approval,19/3/2020,
-RE7139,1,Item didn't fit properly,Pending,6/12/2022,TR4099
-RE7140,4,Poor quality material,Completed,19/11/2020,TR4665
-RE7141,6,Wrong color received,Waiting for Approval,16/11/2020,
-RE7142,5,Item arrived late,On Hold,7/7/2020,TR4554
-RE7143,1,Changed mind about purchase,Rejected,25/9/2020,
-RE7144,2,Item didn't match online photos,Waiting for Approval,1/7/2023,
-RE7145,1,Received damaged item,Cancelled,26/1/2023,
-RE7146,1,Received damaged item,Cancelled,22/1/2023,
-RE7147,8,Wrong color received,Rejected,7/12/2023,
-RE7148,2,Changed mind about purchase,On Hold,19/10/2019,TR2904
-RE7149,5,Poor quality material,Waiting for Approval,23/12/2021,
-RE7150,3,Received wrong size,Rejected,29/1/2024,
-RE7151,1,Poor quality material,On Hold,3/10/2022,TR4963
-RE7152,3,Item not as described,Pending,21/11/2021,TR1358
-RE7153,1,Item not as described,On Hold,25/8/2023,TR4573
-RE7154,1,Changed mind about purchase,Completed,22/7/2019,TR2528
-RE7155,2,Wrong color received,Rejected,30/7/2023,
-RE7156,1,Changed mind about purchase,Processing,18/1/2020,TR2407
-RE7157,4,Item didn't fit properly,Waiting for Approval,14/4/2021,
-RE7158,6,Item not as described,On Hold,22/4/2021,TR6526
-RE7159,4,Changed mind about purchase,Cancelled,12/8/2021,
-RE7160,1,Received damaged item,Cancelled,18/10/2023,
-RE7161,4,Item arrived late,Pending,25/11/2023,TR4567
-RE7162,2,Item didn't fit properly,Approved,4/8/2019,
-RE7163,1,Changed mind about purchase,Rejected,15/12/2019,
-RE7164,4,Poor quality material,Waiting for Approval,14/5/2021,
-RE7165,1,Received wrong size,Pending,1/2/2022,TR2831
-RE7166,1,Received wrong size,Waiting for Approval,18/5/2020,
-RE7167,1,Item not as described,Waiting for Approval,23/8/2022,
-RE7168,1,Changed mind about purchase,Cancelled,1/6/2021,
-RE7169,2,Item arrived late,Pending,3/11/2023,TR2591
-RE7170,2,Item not as described,Cancelled,26/6/2023,
-RE7171,2,Item didn't meet expectations,Cancelled,9/2/2020,
-RE7172,8,Wrong color received,Approved,7/6/2020,
-RE7173,2,Poor quality material,Cancelled,14/5/2021,
-RE7174,2,Poor quality material,Approved,20/7/2020,
-RE7175,1,Poor quality material,Waiting for Approval,16/4/2023,
-RE7176,1,Item didn't fit properly,Rejected,3/1/2022,
-RE7177,3,Changed mind about purchase,Waiting for Approval,6/8/2020,
-RE7178,3,Received wrong size,Processing,11/8/2020,TR6149
-RE7179,1,Received wrong size,Approved,27/10/2022,
-RE7180,1,Item arrived late,Approved,23/5/2020,
-RE7181,1,Wrong color received,Approved,28/3/2020,
-RE7182,3,Item didn't fit properly,On Hold,3/11/2021,TR3022
-RE7183,4,Received wrong size,Approved,14/3/2020,
-RE7184,3,Wrong color received,On Hold,8/11/2022,TR6500
-RE7185,1,Item didn't fit properly,Pending,6/4/2021,TR3756
-RE7186,5,Item didn't fit properly,Processing,29/5/2021,TR4748
-RE7187,5,Poor quality material,Pending,26/11/2020,TR1263
-RE7188,3,Wrong color received,On Hold,3/5/2022,TR3365
-RE7189,2,Item didn't fit properly,Approved,4/9/2022,
-RE7190,1,Item arrived late,Cancelled,9/8/2020,
-RE7191,5,Received wrong size,Processing,22/3/2021,TR6214
-RE7192,1,Item didn't match online photos,On Hold,9/1/2019,TR4753
-RE7193,5,Received wrong size,Cancelled,4/9/2021,
-RE7194,4,Wrong color received,On Hold,25/2/2020,TR8542
-RE7195,3,Item not as described,Cancelled,8/4/2021,
-RE7196,2,Item not as described,Approved,9/10/2021,
-RE7197,2,Item didn't meet expectations,Pending,22/11/2023,TR7487
-RE7198,1,Received wrong size,Pending,3/7/2020,TR2388
-RE7199,4,Poor quality material,Waiting for Approval,21/10/2023,
-RE7200,3,Received damaged item,Waiting for Approval,5/10/2021,
-RE7201,2,Item arrived late,Completed,3/3/2019,TR7140
-RE7202,2,Item not as described,Approved,23/3/2020,
-RE7203,6,Item didn't match online photos,Pending,14/9/2020,TR8107
-RE7204,1,Poor quality material,Rejected,13/4/2022,
-RE7205,6,Wrong color received,Pending,8/12/2022,TR4474
-RE7206,1,Received damaged item,Waiting for Approval,1/10/2022,
-RE7207,1,Received wrong size,Waiting for Approval,30/4/2021,
-RE7208,6,Item not as described,Pending,28/12/2022,TR2049
-RE7209,2,Item didn't fit properly,On Hold,27/10/2019,TR1118
-RE7210,5,Item didn't meet expectations,Pending,15/2/2021,TR1901
-RE7211,2,Changed mind about purchase,Cancelled,5/10/2020,
-RE7212,1,Item not as described,Rejected,25/9/2022,
-RE7213,5,Received wrong size,Waiting for Approval,16/4/2023,
-RE7214,1,Received damaged item,Approved,23/2/2023,
-RE7215,7,Item not as described,On Hold,30/4/2022,TR1072
-RE7216,1,Item arrived late,On Hold,3/12/2020,TR2836
-RE7217,1,Item didn't meet expectations,Approved,8/4/2020,
-RE7218,2,Received damaged item,Completed,8/6/2022,TR6624
-RE7219,8,Wrong color received,Approved,29/1/2024,
-RE7220,4,Received damaged item,Pending,20/2/2019,TR1772
-RE7221,6,Changed mind about purchase,Approved,3/3/2022,
-RE7222,6,Received wrong size,Cancelled,5/9/2019,
-RE7223,1,Received damaged item,Waiting for Approval,29/9/2021,
-RE7224,2,Item not as described,Completed,18/3/2019,TR7277
-RE7225,1,Received wrong size,Processing,26/3/2020,TR6918
-RE7226,2,Item didn't meet expectations,Completed,2/12/2022,TR6656
-RE7227,5,Changed mind about purchase,Completed,4/6/2022,TR8260
-RE7228,2,Item not as described,Approved,24/11/2023,
-RE7229,5,Item didn't match online photos,Completed,15/2/2020,TR4527
-RE7230,4,Received damaged item,Processing,12/2/2021,TR1067
-RE7231,9,Wrong color received,Approved,18/9/2020,
-RE7232,6,Received wrong size,Approved,22/9/2020,
-RE7233,4,Item didn't fit properly,Rejected,24/11/2020,
-RE7234,1,Item didn't fit properly,Waiting for Approval,25/6/2020,
-RE7235,1,Item not as described,Cancelled,10/6/2022,
-RE7236,2,Item didn't match online photos,Approved,1/5/2023,
-RE7237,2,Item didn't meet expectations,On Hold,14/12/2022,TR2496
-RE7238,3,Item didn't match online photos,Rejected,11/11/2019,
-RE7239,2,Changed mind about purchase,Completed,30/7/2023,TR6758
-RE7240,2,Wrong color received,Processing,3/3/2021,TR4390
-RE7241,3,Changed mind about purchase,Approved,2/9/2023,
-RE7242,1,Item didn't match online photos,Cancelled,27/12/2023,
-RE7243,9,Item didn't fit properly,Rejected,6/1/2022,
-RE7244,1,Received wrong size,Waiting for Approval,21/3/2020,
-RE7245,4,Changed mind about purchase,On Hold,13/10/2020,TR6775
-RE7246,1,Item not as described,Cancelled,15/5/2020,
-RE7247,2,Item didn't meet expectations,Waiting for Approval,24/9/2022,
-RE7248,4,Poor quality material,On Hold,3/6/2022,TR1731
-RE7249,4,Item didn't meet expectations,Completed,24/10/2020,TR5250
-RE7250,1,Item didn't match online photos,Approved,30/3/2022,
-RE7251,1,Poor quality material,On Hold,12/9/2023,TR8784
+RE7052,3,Item didn't fit properly,Waiting for Approval,2/9/2021,
+RE7053,1,Item didn't fit properly,Rejected,19/5/2022,
+RE7054,2,Changed mind about purchase,Rejected,10/2/2019,
+RE7055,9,Wrong color received,Rejected,17/1/2022,
+RE7056,7,Item didn't match online photos,Processing,9/1/2021,TR7587
+RE7057,2,Item not as described,Completed,20/11/2019,TR5766
+RE7058,4,Received damaged item,Processing,9/1/2023,TR5769
+RE7059,1,Item not as described,Approved,19/7/2020,
+RE7060,6,Item not as described,Waiting for Approval,2/8/2022,
+RE7061,3,Received damaged item,Approved,11/10/2019,
+RE7062,3,Wrong color received,On Hold,26/8/2023,TR6805
+RE7063,3,Wrong color received,Pending,2/11/2022,TR1106
+RE7064,1,Received damaged item,Pending,4/4/2022,TR8149
+RE7065,4,Received wrong size,Completed,24/6/2023,TR2002
+RE7066,1,Item didn't match online photos,Rejected,11/6/2023,
+RE7067,1,Item didn't match online photos,Processing,26/10/2022,TR3859
+RE7068,2,Poor quality material,On Hold,13/5/2020,TR2824
+RE7069,3,Item not as described,Pending,13/9/2021,TR4276
+RE7070,4,Item not as described,Rejected,17/7/2019,
+RE7071,5,Item didn't meet expectations,Processing,14/5/2023,TR4529
+RE7072,2,Poor quality material,Cancelled,20/7/2021,
+RE7073,4,Poor quality material,Approved,31/7/2020,
+RE7074,7,Item didn't fit properly,On Hold,30/5/2019,TR2053
+RE7075,1,Item didn't match online photos,Waiting for Approval,9/5/2020,
+RE7076,1,Item not as described,On Hold,10/11/2022,TR8094
+RE7077,2,Item not as described,Rejected,16/12/2021,
+RE7078,1,Item arrived late,Waiting for Approval,18/5/2022,
+RE7079,8,Item didn't match online photos,Cancelled,29/9/2021,
+RE7080,2,Item didn't meet expectations,Approved,7/6/2019,
+RE7081,1,Item didn't meet expectations,Waiting for Approval,3/10/2022,
+RE7082,3,Received damaged item,Rejected,8/12/2023,
+RE7083,1,Received wrong size,Completed,13/9/2020,TR6485
+RE7084,8,Received wrong size,Rejected,16/5/2020,
+RE7085,2,Item didn't fit properly,Waiting for Approval,7/9/2020,
+RE7086,4,Item didn't match online photos,Cancelled,2/4/2020,
+RE7087,2,Poor quality material,Pending,30/12/2020,TR4155
+RE7088,2,Item didn't match online photos,Waiting for Approval,30/5/2020,
+RE7089,1,Received wrong size,Processing,14/10/2019,TR2488
+RE7090,1,Item didn't fit properly,Waiting for Approval,7/12/2023,
+RE7091,1,Item didn't meet expectations,On Hold,9/11/2020,TR6712
+RE7092,1,Received damaged item,Rejected,31/7/2020,
+RE7093,1,Poor quality material,Waiting for Approval,22/7/2020,
+RE7094,8,Item didn't match online photos,Completed,8/7/2022,TR2420
+RE7095,3,Item not as described,Completed,6/11/2021,TR5961
+RE7096,2,Item didn't match online photos,Cancelled,29/3/2022,
+RE7097,6,Wrong color received,Cancelled,26/1/2022,
+RE7098,1,Changed mind about purchase,Processing,23/4/2023,TR3382
+RE7099,1,Changed mind about purchase,Waiting for Approval,8/6/2020,
+RE7100,4,Received wrong size,Processing,20/3/2021,TR3726
+RE7101,7,Item arrived late,Pending,2/1/2023,TR1075
+RE7102,8,Wrong color received,Processing,3/2/2022,TR1094
+RE7103,7,Item didn't meet expectations,Cancelled,29/7/2020,
+RE7104,6,Received damaged item,Completed,2/2/2022,TR1101
+RE7105,1,Item didn't match online photos,Cancelled,7/11/2023,
+RE7106,5,Item didn't meet expectations,Rejected,3/1/2021,
+RE7107,2,Item arrived late,Cancelled,7/4/2020,
+RE7108,2,Item didn't meet expectations,Cancelled,1/9/2023,
+RE7109,1,Item didn't meet expectations,Waiting for Approval,26/10/2022,
+RE7110,6,Received damaged item,Cancelled,19/7/2020,
+RE7111,1,Item arrived late,Pending,2/12/2023,TR2832
+RE7112,1,Item didn't meet expectations,Waiting for Approval,6/10/2022,
+RE7113,8,Changed mind about purchase,Waiting for Approval,15/5/2021,
+RE7114,7,Item arrived late,Completed,13/9/2023,TR4210
+RE7115,2,Item didn't match online photos,On Hold,7/3/2020,TR3916
+RE7116,4,Item didn't match online photos,Rejected,18/11/2020,
+RE7117,2,Item not as described,Waiting for Approval,1/2/2020,
+RE7118,8,Received wrong size,Pending,7/3/2022,TR6022
+RE7119,3,Item didn't meet expectations,On Hold,12/10/2019,TR2919
+RE7120,6,Received damaged item,Pending,4/4/2020,TR3211
+RE7121,3,Item didn't fit properly,Completed,2/1/2023,TR4863
+RE7122,4,Item didn't meet expectations,Approved,24/5/2019,
+RE7123,4,Changed mind about purchase,Approved,4/7/2023,
+RE7124,5,Wrong color received,Waiting for Approval,11/1/2022,
+RE7125,6,Item not as described,Waiting for Approval,24/11/2023,
+RE7126,5,Received damaged item,Approved,19/5/2019,
+RE7127,6,Changed mind about purchase,Cancelled,8/4/2023,
+RE7128,1,Item didn't fit properly,Pending,14/7/2023,TR8555
+RE7129,6,Poor quality material,Rejected,19/1/2020,
+RE7130,6,Changed mind about purchase,Cancelled,31/3/2022,
+RE7131,1,Item didn't meet expectations,Completed,16/5/2021,TR1822
+RE7132,4,Poor quality material,Processing,23/9/2020,TR3401
+RE7133,1,Item didn't meet expectations,Rejected,20/3/2020,
+RE7134,2,Received wrong size,Cancelled,22/6/2023,
+RE7135,3,Item didn't fit properly,Cancelled,15/6/2022,
+RE7136,4,Poor quality material,Waiting for Approval,16/3/2020,
+RE7137,5,Received wrong size,Rejected,1/12/2022,
+RE7138,4,Received wrong size,Rejected,22/3/2022,
+RE7139,2,Received damaged item,Cancelled,28/7/2019,
+RE7140,2,Item didn't meet expectations,Completed,24/2/2022,TR5512
+RE7141,1,Item not as described,Approved,7/10/2022,
+RE7142,2,Poor quality material,On Hold,6/10/2022,TR7535
+RE7143,7,Item didn't fit properly,Rejected,19/5/2019,
+RE7144,2,Received damaged item,Completed,5/4/2022,TR6863
+RE7145,4,Item didn't match online photos,On Hold,18/9/2022,TR8576
+RE7146,4,Item didn't fit properly,Processing,3/3/2019,TR2344
+RE7147,5,Received wrong size,On Hold,12/4/2023,TR6828
+RE7148,2,Received wrong size,Approved,14/2/2022,
+RE7149,2,Item didn't match online photos,Approved,6/7/2021,
+RE7150,2,Item didn't match online photos,Rejected,27/8/2020,
+RE7151,3,Received wrong size,Processing,15/11/2023,TR4264
+RE7152,1,Item arrived late,Rejected,13/6/2022,
+RE7153,1,Item didn't meet expectations,Completed,24/12/2021,TR7955
+RE7154,3,Changed mind about purchase,Completed,15/11/2020,TR6386
+RE7155,6,Poor quality material,On Hold,18/2/2022,TR1228
+RE7156,1,Item didn't fit properly,Pending,5/7/2023,TR5158
+RE7157,3,Item didn't fit properly,Completed,19/4/2022,TR3419
+RE7158,1,Wrong color received,Processing,10/10/2023,TR2024
+RE7159,2,Changed mind about purchase,Cancelled,16/6/2020,
+RE7160,4,Item didn't match online photos,Waiting for Approval,22/9/2021,
+RE7161,1,Poor quality material,Cancelled,25/4/2019,
+RE7162,1,Received damaged item,Approved,18/11/2023,
+RE7163,1,Item didn't meet expectations,Rejected,30/7/2022,
+RE7164,1,Item didn't meet expectations,Waiting for Approval,15/2/2020,
+RE7165,8,Received damaged item,Processing,3/3/2020,TR4127
+RE7166,3,Changed mind about purchase,On Hold,18/9/2023,TR3637
+RE7167,3,Wrong color received,Rejected,29/3/2019,
+RE7168,1,Item arrived late,Rejected,16/8/2021,
+RE7169,4,Item arrived late,Pending,10/10/2023,TR6113
+RE7170,1,Poor quality material,Waiting for Approval,3/1/2020,
+RE7171,1,Wrong color received,Completed,5/9/2022,TR3019
+RE7172,8,Item arrived late,Completed,12/1/2021,TR5886
+RE7173,1,Poor quality material,Cancelled,23/4/2021,
+RE7174,4,Item not as described,Processing,10/9/2021,TR1935
+RE7175,1,Item arrived late,Waiting for Approval,7/11/2020,
+RE7176,1,Poor quality material,On Hold,7/9/2022,TR1206
+RE7177,5,Poor quality material,Approved,26/1/2023,
+RE7178,1,Wrong color received,On Hold,13/12/2022,TR6798
+RE7179,7,Item didn't meet expectations,Approved,20/11/2023,
+RE7180,7,Item didn't fit properly,Completed,9/8/2023,TR9035
+RE7181,2,Received wrong size,On Hold,25/4/2023,TR1202
+RE7182,2,Changed mind about purchase,Approved,8/11/2021,
+RE7183,8,Item not as described,Approved,10/9/2021,
+RE7184,1,Item not as described,Approved,9/5/2023,
+RE7185,5,Received damaged item,Approved,11/8/2019,
+RE7186,3,Item not as described,Approved,18/8/2021,
+RE7187,3,Received wrong size,Pending,18/8/2021,TR2402
+RE7188,2,Changed mind about purchase,Cancelled,15/10/2019,
+RE7189,4,Received damaged item,On Hold,14/2/2020,TR5128
+RE7190,1,Item didn't meet expectations,On Hold,13/8/2023,TR5111
+RE7191,1,Received wrong size,Cancelled,13/12/2020,
+RE7192,2,Received wrong size,Pending,29/7/2019,TR2766
+RE7193,5,Poor quality material,Cancelled,29/9/2019,
+RE7194,4,Item didn't meet expectations,Pending,3/2/2020,TR8287
+RE7195,1,Item didn't meet expectations,Pending,22/9/2022,TR4175
+RE7196,6,Item not as described,Pending,14/1/2021,TR8193
+RE7197,7,Received damaged item,Completed,20/8/2019,TR8930
+RE7198,2,Item didn't meet expectations,Rejected,25/11/2020,
+RE7199,4,Item didn't fit properly,Cancelled,1/5/2021,
+RE7200,5,Item arrived late,On Hold,17/10/2023,TR4021
+RE7201,4,Item didn't meet expectations,Completed,17/10/2020,TR8557
+RE7202,1,Received wrong size,Cancelled,24/7/2020,
+RE7203,1,Item didn't meet expectations,Pending,16/11/2020,TR2844
+RE7204,7,Received wrong size,Processing,3/9/2021,TR6243
+RE7205,4,Received damaged item,Completed,21/2/2019,TR8682
+RE7206,2,Received wrong size,Processing,23/5/2021,TR8003
+RE7207,6,Poor quality material,Rejected,12/6/2023,
+RE7208,2,Received damaged item,Approved,13/12/2021,
+RE7209,8,Changed mind about purchase,Pending,22/3/2019,TR7235
+RE7210,2,Received damaged item,Pending,23/7/2020,TR8731
+RE7211,8,Received wrong size,Waiting for Approval,23/11/2019,
+RE7212,4,Poor quality material,On Hold,16/11/2023,TR6704
+RE7213,1,Item arrived late,Approved,23/9/2020,
+RE7214,1,Item didn't meet expectations,Approved,6/10/2019,
+RE7215,2,Received damaged item,Cancelled,29/10/2021,
+RE7216,2,Item not as described,On Hold,24/2/2022,TR4032
+RE7217,5,Item didn't match online photos,Approved,25/9/2023,
+RE7218,8,Received damaged item,Pending,21/5/2023,TR1319
+RE7219,1,Received damaged item,Pending,19/5/2021,TR8497
+RE7220,2,Changed mind about purchase,Waiting for Approval,14/12/2022,
+RE7221,3,Poor quality material,On Hold,11/1/2019,TR7527
+RE7222,1,Received damaged item,Rejected,1/3/2023,
+RE7223,1,Received wrong size,Rejected,22/2/2023,
+RE7224,8,Received wrong size,Pending,23/3/2022,TR8476
+RE7225,3,Item arrived late,Approved,15/10/2019,
+RE7226,9,Item didn't fit properly,Completed,20/12/2021,TR3179
+RE7227,1,Item arrived late,Rejected,17/11/2020,
+RE7228,5,Poor quality material,Approved,11/3/2020,
+RE7229,7,Item didn't meet expectations,Completed,2/1/2021,TR8711
+RE7230,1,Item arrived late,Rejected,27/2/2020,
+RE7231,1,Received damaged item,Completed,27/6/2019,TR8105
+RE7232,2,Item not as described,On Hold,5/7/2023,TR2414
+RE7233,1,Item not as described,Rejected,12/6/2023,
+RE7234,1,Received damaged item,Cancelled,4/2/2022,
+RE7235,1,Received wrong size,Waiting for Approval,24/10/2022,
+RE7236,3,Poor quality material,Approved,17/7/2019,
+RE7237,4,Item didn't meet expectations,Approved,14/10/2019,
+RE7238,5,Item didn't fit properly,Rejected,17/11/2023,
+RE7239,8,Changed mind about purchase,Rejected,29/1/2023,
+RE7240,6,Item didn't match online photos,Pending,29/6/2019,TR6250
+RE7241,3,Changed mind about purchase,Waiting for Approval,21/7/2023,
+RE7242,8,Item not as described,Completed,4/7/2019,TR5020
+RE7243,4,Item didn't fit properly,Waiting for Approval,21/11/2022,
+RE7244,1,Wrong color received,Completed,4/11/2023,TR4659
+RE7245,2,Item didn't fit properly,Pending,2/1/2023,TR5499
+RE7246,1,Item arrived late,Cancelled,14/9/2022,
+RE7247,7,Item didn't fit properly,Approved,12/9/2021,
+RE7248,2,Poor quality material,Cancelled,12/3/2020,
+RE7249,1,Received damaged item,Completed,5/10/2019,TR8931
+RE7250,1,Item didn't match online photos,Waiting for Approval,16/2/2022,
+RE7251,2,Item didn't meet expectations,Processing,29/12/2021,TR7078
