@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `Customer` (
   `FirstName` VARCHAR(255) NOT NULL,
   `LastName` VARCHAR(255) NOT NULL,
   `PhoneNumber` VARCHAR(20),
-  `Email` VARCHAR(255) UNIQUE NOT NULL,
+  `Email` VARCHAR(255) NOT NULL,
   `Password` VARCHAR(255) NOT NULL,
   `DOB` DATE 
 );
