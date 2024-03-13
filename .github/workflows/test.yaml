@@ -24,7 +24,7 @@ jobs:
       - name: Install packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          Rscript -e 'install.packages(c("dplyr"),("readr"),("RSQLite"))'
+          Rscript -e 'install.packages(c("dplyr","readr","RSQLite"))'
       - name: Execute Load data file
         run: |
           Rscript R/load_data.R, R/referential_integrity
