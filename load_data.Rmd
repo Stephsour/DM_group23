@@ -14,7 +14,7 @@ library(RSQLite)
 ```
 
 ```{r}
-file_path <- "New Data/"
+file_path <- "Data/"
 all_files <- list.files(file_path)
 ```
 
