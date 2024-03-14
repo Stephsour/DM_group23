@@ -36,8 +36,8 @@ jobs:
           Rscript Plots.R
       - name: Appending commit to user
         run: |
-          git config --global user.email "geckeos@googlemail.com"
-          git config --global user.name "geckeos"
+          git config --global user.email "stephanieskl0424@gmail.com"
+          git config --global user.name "Stephsour"
           git add zara.db
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
