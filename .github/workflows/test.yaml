@@ -24,18 +24,21 @@ jobs:
       - name: Install packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          Rscript -e 'install.packages(c("dplyr","readr","RSQLite"))'
+          Rscript -e 'install.packages(c("dplyr","readr","RSQLite","ggplot2"))'
       - name: Execute Load data file
         run: |
           Rscript load_data.R
       - name: Check REF integrity
         run: |
           Rscript referential_integrity.R
+      - name: Basic plots
+        run: |
+          Rscript Plots.R
       - name: Appending commit to user
         run: |
-          git config --global user.email "geckeos@gmail.com"
+          git config --global user.email "geckeos@googlemail.com"
           git config --global user.name "geckeos"
-          git add --all figures/
+          git add database/zara.db
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
