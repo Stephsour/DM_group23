@@ -38,7 +38,7 @@ jobs:
         run: |
           git config --global user.email "geckeos@googlemail.com"
           git config --global user.name "geckeos"
-          git add database/zara.db
+          git add zara.db
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
