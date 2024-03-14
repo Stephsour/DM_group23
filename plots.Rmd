@@ -84,19 +84,22 @@ combined_sale <- rbind(data.frame(date = daily_sales$InvoiceDate, value = daily_
 sale_date <- RSQLite::dbGetQuery(database_connection, "SELECT StartDate, EndDate FROM Sale;")
 sale_date$StartDate <-  as.Date(sale_date$StartDate)
 sale_date$EndDate <-  as.Date(sale_date$EndDate)
-wfh.shade <- data.frame(first = sale_date$StartDate,second = sale_date$EndDate, min = -Inf, max = Inf)
+sale.shade <- data.frame(first = sale_date$StartDate,second = sale_date$EndDate, min = -Inf, max = Inf)
+
+legend_order <- c("Sales Amount", "Products On Sale")
 
 ggplot(combined_sale, aes(x = date, y = value)) + 
   geom_line(aes(col = type)) + 
+  scale_color_manual(name = "Sales Amount", values = c("black", "coral3")) +
   geom_smooth(method = "lm",se = T, col = "blue") +
-  geom_rect(data = wfh.shade, aes(x = NULL, y = NULL, xmin = first, xmax = second, ymin = min, ymax = max, fill = "darkseagreen"), alpha = 0.4) + 
-  scale_fill_manual(name = "Sale Events", values = "darkseagreen", labels = "Sale Period") +
+  geom_rect(data = sale.shade, aes(x = NULL, y = NULL, xmin = first, xmax = second, ymin = min, ymax = max, fill = "darkseagreen"), alpha = 0.4) + 
+  scale_fill_manual(name = "Products On Sale", values = "darkseagreen", labels = "Sale Period") +
   labs(fill = "Sale Period")  + 
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),axis.ticks.x = element_line(size = 0.5)) +
-  scale_color_manual(name = "Sales Amount", values = c("black", "coral3")) +
   scale_x_date(limits = c(min(combined_sale$date), max(combined_sale$date)),breaks = '3 months') +
-  labs(title = "Time Series Plot for Daily Sales Amount", x = "Invoice Date", y = "Sales Amount")
+  labs(title = "Time Series Plot for Daily Sales Amount", x = "Invoice Date", y = "Sales Amount") +
+  guides(color = guide_legend(order = 1),fill = guide_legend(order = 2))
 
 ```
 
@@ -122,15 +125,16 @@ combined_quantity <- rbind(data.frame(date = daily_sales$InvoiceDate, value = da
 
 ggplot(combined_quantity, aes(x = date, y = value)) + 
   geom_line(aes(col = type)) + 
+  scale_color_manual(name = "Sales Quantity", values = c("black", "coral2")) +
   geom_smooth(method = "lm",se = T, col = "red") +
-  geom_rect(data = wfh.shade, aes(x = NULL, y = NULL, xmin = first, xmax = second, ymin = min, ymax = max, fill = "darkseagreen"), alpha = 0.4) + 
-  scale_fill_manual(name = "Sale Events", values = "darkseagreen", labels = "Sale Period") +
+  geom_rect(data = sale.shade, aes(x = NULL, y = NULL, xmin = first, xmax = second, ymin = min, ymax = max, fill = "darkseagreen"), alpha = 0.4) + 
+  scale_fill_manual(name = "Products On Sale", values = "darkseagreen", labels = "Sale Period") +
   labs(fill = "Sale Period")  + 
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),axis.ticks.x = element_line(size = 0.5)) +
-  scale_color_manual(name = "Sales Quantity", values = c("black", "coral2")) +
   scale_x_date(limits = c(min(combined_quantity$date), max(combined_quantity$date)),breaks = '3 months') +
-  labs(title = "Time Series Plot for Daily Sales Quantity", x = "Invoice Date", y = "Quantity")
+  labs(title = "Time Series Plot for Daily Sales Quantity", x = "Invoice Date", y = "Quantity") + 
+  guides(color = guide_legend(order = 1),fill = guide_legend(order = 2))
 ```
 
 ```{r}

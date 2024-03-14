@@ -7,13 +7,16 @@ Steps to play around:
 
 3. Print referential integrity: run the file referential_integrity.Rmd 
 
-4. Check for duplicate entries in the database: in terminal, run sqlite3 zara.db < duplicate_entries.sql (should show nth since there are no duplicate entries)
+4. run the plots.rmd
 
-5. Check for any entry error (e.g. start date after end date etc.) in the database: in terminal, run sqlite3 zara.db < entryerror.sql
-
-6. if want to try retrieving data, you can either do it by creating an sql script then use the command: sqlite3 zara.db < the script
+5. if want to try retrieving data, you can either do it by creating an sql script then use the command: sqlite3 zara.db < the script
 
 or 
 
 in terminal: sqlite3 zara.db
 then type the SQL statements
+
+Example
+For entry(email) in new_data NOT in data
+	Entry.append
+	Customer_id(Entry) = Customer_id(Total) + 1
