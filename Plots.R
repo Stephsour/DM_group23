@@ -7,7 +7,7 @@ database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
 
 # Prepare data for plotting the time series data
 sales_data <- RSQLite::dbGetQuery(database_connection, 
-                                  "SELECT DISTINCT I.InvoiceNumber, I.InvoiceDate, P.ProductID, P.Quantity, PR.Price AS OriginalPrice,
+                                  "SELECT DISTINCT I.InvoiceNumber, I.InvoiceDate, P.ProductID,PR.ProductName, P.Quantity, R.RefundQuantity,R.Reason, PC.CategoryName, SUP.SupplierName, PR.Price AS OriginalPrice, PY.PaymentMethod,PY.PaymentStatus,
     CASE 
         WHEN I.InvoiceDate >= S.StartDate AND I.InvoiceDate <= S.EndDate THEN (1 - S.DiscountPercentage) * PR.Price
         ELSE PR.Price
@@ -16,9 +16,15 @@ FROM Invoice AS I
 INNER JOIN Purchase AS P ON I.InvoiceNumber = P.InvoiceNumber
 LEFT  JOIN Refund AS R ON P.RefundID = R.RefundID
 INNER JOIN Product AS PR ON P.ProductID = PR.ProductID
+LEFT JOIN SupplierProduct AS SP ON SP.ProductID = PR.ProductID
+LEFT JOIN Supplier AS SUP ON SUP.SupplierID = SP.SupplierID
+INNER JOIN ProductCategory AS PC ON PC.CategoryID = PR.CategoryID
+INNER JOIN Payment AS PY ON PY.InvoiceNumber = I.InvoiceNumber
 LEFT JOIN ProductSale AS PS ON PR.ProductID = PS.ProductID
 LEFT JOIN Sale AS S ON PS.SaleID = S.SaleID
-WHERE I.Status != 'Cancelled'  AND OriginalPrice = SellPrice
+WHERE I.Status != 'Cancelled'  
+GROUP BY I.InvoiceNumber, P.ProductID
+ORDER BY I.InvoiceNumber
 ;")
 
 discount_record <- RSQLite::dbGetQuery(database_connection, 
@@ -37,16 +43,19 @@ for (i in 1:nrow(discount_record)) {
     sales_data$ProductID == discount_record[i,]$ProductID
   
   # Replace matching rows in sales_data with current row from discount_record
-  sales_data[matching_rows, ] <- discount_record[i,]
+  sales_data[matching_rows, "SellPrice"] <- discount_record[i,"SellPrice"]
 }
 
 sales_data$InvoiceDate <- as.Date(sales_data$InvoiceDate)
-daily_sales <- sales_data %>% group_by(InvoiceDate) %>% summarise(quantity = sum(Quantity), sale = sum(Quantity * SellPrice)) 
 
+
+# Daily Sales and Sales Volume
+
+# Extract daily sales
+daily_sales <- sales_data %>% group_by(InvoiceDate) %>% summarise(quantity = sum(Quantity), sale = sum(Quantity * SellPrice)) 
 daily_sales <- daily_sales[order(daily_sales$InvoiceDate, decreasing = T),]
 
-
-
+# Generate forecast prediction
 set.seed(10)
 prediction_length <- 90
 predicted_sale <- numeric(prediction_length)
@@ -66,7 +75,7 @@ combined_sale <- rbind(data.frame(date = daily_sales$InvoiceDate, value = daily_
                        data.frame(date = predicted_sale$InvoiceDate, value = predicted_sale$predicted_sale, type = "Forecast"))
 
 
-
+# Extract time periods when products are on sale
 sale_date <- RSQLite::dbGetQuery(database_connection, "SELECT StartDate, EndDate FROM Sale;")
 sale_date$StartDate <-  as.Date(sale_date$StartDate)
 sale_date$EndDate <-  as.Date(sale_date$EndDate)
@@ -74,6 +83,7 @@ sale.shade <- data.frame(first = sale_date$StartDate,second = sale_date$EndDate,
 
 legend_order <- c("Sales Amount", "Products On Sale")
 
+# Plot Daily Sales Amount
 ggplot(combined_sale, aes(x = date, y = value)) + 
   geom_line(aes(col = type)) + 
   scale_color_manual(name = "Sales Amount", values = c("black", "coral3")) +
@@ -119,4 +129,97 @@ ggplot(combined_quantity, aes(x = date, y = value)) +
   labs(title = "Time Series Plot for Daily Sales Quantity", x = "Invoice Date", y = "Quantity") + 
   guides(color = guide_legend(order = 1),fill = guide_legend(order = 2))
 
+# sum up RefundQuantity by Reason
+refundR_summary <- aggregate(RefundQuantity ~ Reason, data = sales_data, FUN = sum)
+
+# arrange them in order
+refundR_summary <- refundR_summary[order(-refundR_summary$RefundQuantity), ]
+
+# create bar chart to count the number of refund reason
+ggplot(refundR_summary, aes(x = reorder(Reason, -RefundQuantity), y = RefundQuantity)) +
+  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+  labs(title = "Total RefundQuantity by Reason",
+       x = "Reason",
+       y = "Total RefundQuantity") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# sum up RefundQuantity by ProductName
+refundP_summary <- aggregate(RefundQuantity ~ ProductName, data = sales_data, FUN = sum)
+
+# arrange them in order
+refundP_summary <- refundP_summary[order(-refundP_summary$RefundQuantity), ]
+
+# create bar chart to count the number of refund PreoductName
+ggplot(refundP_summary[1:10,], aes(x = reorder(ProductName, -RefundQuantity), y = RefundQuantity)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Top 10 Refunded Products",
+       x = "Product Name",
+       y = "Total Refund Quantity") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# sum up sell price by Product Category Name
+PCsales_summary <- aggregate(SellPrice ~ CategoryName, data = sales_data, FUN = sum)
+
+# arrange them in order
+PCsales_summary <- PCsales_summary[order(-PCsales_summary$SellPrice), ]
+
+# plot
+ggplot(PCsales_summary, aes(x = reorder(CategoryName, -SellPrice), y = SellPrice)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Total SellPrice by Category Name",
+       x = "Category Name",
+       y = "Total Sell Price") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# computing the sum of Quantity and Refund Quantity by Category Name
+PCquantity <- aggregate(cbind(Quantity, RefundQuantity) ~ CategoryName, data = sales_data, FUN = sum)
+
+#arrange order
+PCquantity <- PCquantity[order(-PCquantity$Quantity, -PCquantity$RefundQuantity), ]
+
+# stacked bar plot for quantity(with return) by category name
+ggplot(PCquantity, aes(x = reorder(CategoryName, -Quantity), y = Quantity)) +
+  geom_bar(aes(fill = "RemainingQuantity"), stat = "identity") +
+  geom_bar(aes(y = RefundQuantity, fill = "RefundQuantity"), stat = "identity") +
+  labs(title = "Quantity (vs RefundQuantity) by CategoryName",
+       x = "CategoryName",
+       y = "Total Quantity") +
+  scale_fill_manual(values = c("RemainingQuantity" = "skyblue", "RefundQuantity" = "pink"), 
+                    name = "Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  guides(fill = guide_legend(title = "Type"))
+
+# computing the sum of Quantity and Refund Quantity by Supplier Name
+SUP_summary <- aggregate(cbind(Quantity, RefundQuantity) ~ SupplierName, data = sales_data, FUN = sum)
+
+#arrange order
+SUP_summary <- SUP_summary[order(-SUP_summary$Quantity, -SUP_summary$RefundQuantity), ]
+
+# stacked bar plot for quantity(with return) by Supplier name
+ggplot(SUP_summary, aes(x = reorder(SupplierName, -Quantity), y = Quantity)) +
+  geom_bar(aes(fill = "RemainingQuantity"), stat = "identity") +
+  geom_bar(aes(y = RefundQuantity, fill = "RefundQuantity"), stat = "identity") +
+  labs(title = "Quantity (vs RefundQuantity) by SupplierName",
+       x = "SupplierName",
+       y = "Total Quantity") +
+  scale_fill_manual(values = c("RemainingQuantity" = "skyblue", "RefundQuantity" = "pink"), 
+                    name = "Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  guides(fill = guide_legend(title = "Type"))
+
+# computing transaction amount in each payment Method
+py_method_summary <- aggregate(SellPrice * Quantity ~ PaymentMethod, data = sales_data, FUN = sum)
+
+# in order
+py_method_summary <- py_method_summary[order(-py_method_summary$`SellPrice * Quantity`), ]
+
+# plot
+ggplot(py_method_summary, aes(x = reorder(PaymentMethod, -`SellPrice * Quantity`), y = `SellPrice * Quantity`)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Total SellPrice * Quantity by PaymentMethod",
+       x = "PaymentMethod",
+       y = "Total SellPrice * Quantity") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 RSQLite::dbDisconnect(database_connection)
+
