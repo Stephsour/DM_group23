@@ -34,7 +34,7 @@ jobs:
       - name: Basic plots
         run: |
           Rscript Plots.R
-      - name: Appending commit to user
+      - name: Appending commit to user stephanie
         run: |
           git config --global user.email "stephanieskl0424@gmail.com"
           git config --global user.name "Stephsour"
