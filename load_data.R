@@ -23,9 +23,13 @@ if ("Customer.csv" %in% all_files) {
   this_file_path <- paste0(file_path,"Customer.csv")
   file_content <- readr::read_csv(this_file_path)
   
+  # bypass rows with na values in not null columns
+  no_na_cust <- c("CustomerID", "Title", "FirstName", "LastName", "Email", "Password")
+  valid_customer <- file_content[complete.cases(file_content[,no_na_cust]),]
+
   # bypass rows that has repeated primary key
   cust_pk <- RSQLite::dbGetQuery(database_connection, "SELECT CustomerID FROM Customer;")
-  valid_customer <- file_content %>% filter(!(CustomerID %in% cust_pk$CustomerID)) 
+  valid_customer <- valid_customer %>% filter(!(CustomerID %in% cust_pk$CustomerID)) 
   
   # save and remove invalid customer data
   invalid_cemail <- !sapply(valid_customer$Email, check_email_format)
@@ -54,10 +58,14 @@ if ("Customer.csv" %in% all_files) {
 if ("Invoice.csv" %in% all_files) {
   this_file_path <- paste0(file_path,"Invoice.csv")
   file_content <- readr::read_csv(this_file_path)
+
+  # bypass rows with na values in not null columns
+  no_na_invoice <- c("InvoiceNumber", "InvoiceDate", "CustomerID", "AddressLine", "Town", "Postcode", "Status")
+  valid_invoice <- file_content[complete.cases(file_content[,no_na_invoice]),]
   
   # bypass rows that has repeated primary key
   invoice_pk <- RSQLite::dbGetQuery(database_connection, "SELECT InvoiceNumber FROM Invoice;")
-  valid_invoice <- file_content %>% filter(!(InvoiceNumber %in% invoice_pk$InvoiceNumber)) 
+  valid_invoice <- valid_invoice %>% filter(!(InvoiceNumber %in% invoice_pk$InvoiceNumber)) 
   
   # save and remove invalid customer data
   invalid_invoicedate <- !sapply(valid_invoice$InvoiceDate, check_date_format)
@@ -86,9 +94,12 @@ if ("Payment.csv" %in% all_files){
   this_file_path <- paste0(file_path,"Payment.csv")
   file_content <- readr::read_csv(this_file_path)
   
+  # bypass rows with na values in not null columns
+  valid_payment <- file_content[complete.cases(file_content),]
+  
   # bypass rows that has repeated primary key
   payment_pk <- RSQLite::dbGetQuery(database_connection, "SELECT PaymentID FROM Payment;")
-  valid_payment <- file_content %>% filter(!(PaymentID %in% payment_pk$PaymentID)) 
+  valid_payment <- valid_payment %>% filter(!(PaymentID %in% payment_pk$PaymentID)) 
   
   # save and remove invalid payment records
   invalid_paydate <- !sapply(valid_payment$PaymentDate, check_date_format)
@@ -116,10 +127,13 @@ if ("Payment.csv" %in% all_files){
 if ("Sale.csv" %in% all_files) {
   this_file_path <- paste0(file_path,"Sale.csv")
   file_content <- readr::read_csv(this_file_path)
+
+  # bypass rows with na values in not null columns
+  valid_sale <- file_content[complete.cases(file_content),]  
   
   # bypass rows that has repeated primary key
   sale_pk <- RSQLite::dbGetQuery(database_connection, "SELECT SaleID FROM Sale;")
-  valid_sale <- file_content %>% filter(!(SaleID %in% sale_pk$SaleID)) 
+  valid_sale <- valid_sale %>% filter(!(SaleID %in% sale_pk$SaleID)) 
   
   # check sale dates format
   invalid_start <- !sapply(valid_sale$StartDate, check_date_format)
@@ -152,9 +166,13 @@ if ("Refund.csv" %in% all_files) {
   this_file_path <- paste0(file_path,"Refund.csv")
   file_content <- readr::read_csv(this_file_path)
   
+  # bypass rows with na values in not null columns
+  no_na_refund <- c("RefundID", "RefundQuantity", "Reason", "Status", "RefundDate")
+  valid_refund <- file_content[complete.cases(file_content[,no_na_refund]),]
+  
   # bypass rows that has repeated primary key
   refund_pk <- RSQLite::dbGetQuery(database_connection, "SELECT RefundID FROM Refund;")
-  valid_refund <- file_content %>% filter(!(RefundID %in% refund_pk$RefundID))
+  valid_refund <- valid_refund %>% filter(!(RefundID %in% refund_pk$RefundID))
   
   # check date format
   invalid_refdate <- !sapply(valid_refund$RefundDate, check_date_format)
@@ -183,9 +201,12 @@ if ("Supplier.csv" %in% all_files) {
   this_file_path <- paste0(file_path,"Supplier.csv")
   file_content <- readr::read_csv(this_file_path)
   
+  # bypass rows with na values in not null columns
+  valid_supplier <- file_content[complete.cases(file_content),]
+  
   # bypass rows that has repeated primary key
   supplier_pk <- RSQLite::dbGetQuery(database_connection, "SELECT SupplierID FROM Supplier;")
-  valid_supplier <- file_content %>% filter(!(SupplierID %in% supplier_pk$SupplierID))
+  valid_supplier <- valid_supplier %>% filter(!(SupplierID %in% supplier_pk$SupplierID))
   
   # save and remove invalid supplier data
   invalid_supemail <- !sapply(valid_supplier$ContactEmail, check_email_format)
@@ -221,6 +242,10 @@ for (file in remaining) {
     valid_record <- file_content %>% filter(!(file_content[,1] %in% primary_key))
     if (entity == "Product" & nrow(valid_record) != 0) {
       valid_record <- valid_record[is.numeric(valid_record$Price),]
+      no_na_prod <- c("ProductID", "CategoryID", "ProductName", "Price", "Inventory")
+      valid_record <- valid_record[complete.cases(valid_record[,no_na_prod]),]
+    } else {
+      valid_record <- valid_record[complete.cases(valid_record),]
     }
   } else if (entity %in% c("ProductSale", "SupplierProduct", "Purchase")) {
     results <- RSQLite::dbGetQuery(database_connection, paste0("SELECT * FROM ", entity, ";"))
@@ -232,6 +257,10 @@ for (file in remaining) {
     valid_record <- file_content[!repeated,]
     if (entity == "Purchase" & nrow(valid_record != 0)) {
       valid_record <- valid_record[is.numeric(valid_record$Quantity),]
+      no_na_purchase <- c("ProductID", "InvoiceNumber", "Quantity")
+      valid_record <- valid_record[complete.cases(valid_record[,no_na_purchase]),]
+    } else {
+      valid_record <- valid_record[complete.cases(valid_record),]
     }
   }
   
