@@ -219,14 +219,18 @@ for (file in remaining) {
     results <- RSQLite::dbGetQuery(database_connection, paste0("SELECT * FROM ",entity,";"))
     primary_key <- as_tibble(results[,1])
     valid_record <- file_content %>% filter(!(file_content[,1] %in% primary_key))
-    if (entity == "Product") {
+    if (entity == "Product" & nrow(valid_record) != 0) {
       valid_record <- valid_record[is.numeric(valid_record$Price),]
     }
   } else if (entity %in% c("ProductSale", "SupplierProduct", "Purchase")) {
     results <- RSQLite::dbGetQuery(database_connection, paste0("SELECT * FROM ", entity, ";"))
-    primary_key <- as_tibble(results[,1:2])
-    valid_record <- file_content %>% filter(!(paste0(file_content[,1],file_content[,2]) %in% paste0(primary_key[,1],primary_key[,2])))
-    if (entity == "Purchase") {
+    primary_key <- results[,1:2]
+    file_content <- as.data.frame(file_content)
+    primary_key_combined <- paste(primary_key[,1], primary_key[,2])
+    file_content_combined <- paste(file_content[,1], file_content[,2])
+    repeated <- sapply(file_content_combined, function(x) any(x == primary_key_combined))
+    valid_record <- file_content[!repeated,]
+    if (entity == "Purchase" & nrow(valid_record != 0)) {
       valid_record <- valid_record[is.numeric(valid_record$Quantity),]
     }
   }
