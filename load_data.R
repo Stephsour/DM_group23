@@ -18,7 +18,7 @@ check_date_format <- function(date) {
 }
 
 
-# Validate Customer
+# Insert Customer Data
 if ("Customer.csv" %in% all_files) {
   this_file_path <- paste0(file_path,"Customer.csv")
   file_content <- readr::read_csv(this_file_path)
@@ -28,11 +28,11 @@ if ("Customer.csv" %in% all_files) {
   valid_customer <- file_content %>% filter(!(CustomerID %in% cust_pk$CustomerID)) 
   
   # save and remove invalid customer data
-  invalid_email_rows <- !sapply(valid_customer$Email, check_email_format)
-  valid_customer <- valid_customer[!invalid_email_rows, ]
+  invalid_cemail <- !sapply(valid_customer$Email, check_email_format)
+  valid_customer <- valid_customer[!invalid_cemail,]
   
-  invalid_DOB_rows <- !sapply(valid_customer$DOB, check_date_format)
-  valid_customer <- valid_customer[!invalid_DOB_rows,]
+  invalid_DOB <- !sapply(valid_customer$DOB, check_date_format)
+  valid_customer <- valid_customer[!invalid_DOB,]
   
   # remove duplicated rows
   valid_customer <- valid_customer[!duplicated(valid_customer),]
@@ -60,8 +60,11 @@ if ("Invoice.csv" %in% all_files) {
   valid_invoice <- file_content %>% filter(!(InvoiceNumber %in% invoice_pk$InvoiceNumber)) 
   
   # save and remove invalid customer data
-  invalid_InvoiceDate_rows <- !sapply(valid_invoice$InvoiceDate, check_date_format)
-  valid_invoice <- valid_invoice[!invalid_InvoiceDate_rows,]  
+  invalid_invoicedate <- !sapply(valid_invoice$InvoiceDate, check_date_format)
+  valid_invoice <- valid_invoice[!invalid_invoicedate,]
+  
+  # check if invoice status is within allowable value
+  valid_invoice <- valid_invoice[valid_invoice$Status %in% c("Completed", "Shipped", "Preparing for Shipment", "Processing", "Cancelled", "Pending for Payment"),]
   
   # remove duplicated
   valid_invoice <- valid_invoice[!duplicated(valid_invoice),]
@@ -82,14 +85,17 @@ if ("Invoice.csv" %in% all_files) {
 if ("Payment.csv" %in% all_files){
   this_file_path <- paste0(file_path,"Payment.csv")
   file_content <- readr::read_csv(this_file_path)
-
+  
   # bypass rows that has repeated primary key
   payment_pk <- RSQLite::dbGetQuery(database_connection, "SELECT PaymentID FROM Payment;")
   valid_payment <- file_content %>% filter(!(PaymentID %in% payment_pk$PaymentID)) 
   
   # save and remove invalid payment records
-  invalid_PaymentDate_rows <- !sapply(valid_payment$PaymentDate, check_date_format)
-  valid_payment <- valid_payment[!invalid_PaymentDate_rows,]
+  invalid_paydate <- !sapply(valid_payment$PaymentDate, check_date_format)
+  valid_payment <- valid_payment[!invalid_paydate,]
+  
+  # check if payment status in allowable value
+  valid_payment <- valid_payment[valid_payment$PaymentStatus %in% c("Payment Declined", "Payment Successful"),]
   
   # remove duplicated rows
   valid_payment <- valid_payment[!duplicated(valid_payment),]
@@ -115,12 +121,15 @@ if ("Sale.csv" %in% all_files) {
   sale_pk <- RSQLite::dbGetQuery(database_connection, "SELECT SaleID FROM Sale;")
   valid_sale <- file_content %>% filter(!(SaleID %in% sale_pk$SaleID)) 
   
-  # save and remove invalid sale data
-  invalid_StartDate_rows <- !sapply(valid_sale$StartDate, check_date_format)
-  valid_sale <- valid_sale[!invalid_StartDate_rows,]  
+  # check sale dates format
+  invalid_start <- !sapply(valid_sale$StartDate, check_date_format)
+  valid_sale <- valid_sale[!invalid_start,]
   
-  invalid_EndDate_rows <- !sapply(valid_sale$EndDate, check_date_format)
-  valid_sale <- valid_sale[!invalid_EndDate_rows,]
+  invalid_end <- !sapply(valid_sale$EndDate, check_date_format)
+  valid_sale <- valid_sale[!invalid_end,]
+  
+  # check discount percentage data type
+  valid_sale <- valid_sale[is.numeric(valid_sale$DiscountPercentage),]
   
   # remove duplicated
   valid_sale <- valid_sale[!duplicated(valid_sale),]
@@ -147,9 +156,12 @@ if ("Refund.csv" %in% all_files) {
   refund_pk <- RSQLite::dbGetQuery(database_connection, "SELECT RefundID FROM Refund;")
   valid_refund <- file_content %>% filter(!(RefundID %in% refund_pk$RefundID))
   
-  # save and remove invalid refund
-  invalid_RefundDate_rows <- !sapply(valid_refund$RefundDate, check_date_format)
-  valid_refund <- valid_refund[!invalid_RefundDate_rows,]  
+  # check date format
+  invalid_refdate <- !sapply(valid_refund$RefundDate, check_date_format)
+  valid_refund <- valid_refund[!invalid_refdate,]
+  
+  # check data type of refund quantity
+  valid_refund <- valid_refund[is.numeric(valid_refund$RefundQuantity),]
   
   # remove duplicated
   valid_refund <- valid_refund[!duplicated(valid_refund),]
@@ -176,8 +188,8 @@ if ("Supplier.csv" %in% all_files) {
   valid_supplier <- file_content %>% filter(!(SupplierID %in% supplier_pk$SupplierID))
   
   # save and remove invalid supplier data
-  invalid_contactemail_rows <- !sapply(valid_supplier$ContactEmail, check_email_format)
-  valid_supplier <- valid_supplier[!invalid_contactemail_rows, ]
+  invalid_supemail <- !sapply(valid_supplier$ContactEmail, check_email_format)
+  valid_supplier <- valid_supplier[!invalid_supemail,]
   
   #remove duplicated
   valid_supplier <- valid_supplier[!duplicated(valid_supplier),]
@@ -203,8 +215,23 @@ for (file in remaining) {
   
   table_name <- gsub(".csv","0",file)
   
+  if (entity %in% c("Product", "ProductCategory")) {
+    results <- RSQLite::dbGetQuery(database_connection, paste0("SELECT * FROM ",entity,";"))
+    primary_key <- as_tibble(results[,1])
+    valid_record <- file_content %>% filter(!(file_content[,1] %in% primary_key))
+    if (entity == "Product") {
+      valid_record <- valid_record[is.numeric(valid_record$Price),]
+    }
+  } else if (entity %in% c("ProductSale", "SupplierProduct", "Purchase")) {
+    results <- RSQLite::dbGetQuery(database_connection, paste0("SELECT * FROM ", entity, ";"))
+    primary_key <- as_tibble(results[,1:2])
+    valid_record <- file_content %>% filter(!(paste0(file_content[,1],file_content[,2]) %in% paste0(primary_key[,1],primary_key[,2])))
+    if (entity == "Purchase") {
+      valid_record <- valid_record[is.numeric(valid_record$Quantity),]
+    }
+  }
   
-  RSQLite::dbWriteTable(database_connection, table_name, file_content, overwrite = T)
+  RSQLite::dbWriteTable(database_connection, table_name, valid_record, overwrite = T)
   insert_query <- paste0("INSERT INTO ",entity," SELECT * FROM ",table_name,";")
   RSQLite::dbExecute(database_connection, insert_query)
   
