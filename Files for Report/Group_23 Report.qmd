@@ -1,5 +1,5 @@
 ---
-title: "Database Design Based on Zara's Workflow"
+title: "E-commerce Fast Fashion Database Design"
 engine: knitr
 toc: true
 format: 
@@ -30,7 +30,7 @@ The ecommerce database design discussed focuses solely on the core workflow of t
 
 The finalized database comprises 8 entities: Customer, Product, Product Category, Supplier, Sale, Invoice, Payment, and Refund. Figure 1 below is the ER diagram which illustrates their attributes and database relationships, associations between entities are detailed in the relationship sets shown in figures 2-7. 
 
-![ER Diagram Based on Zara's Workflow](Images/ER.png)
+![ER Diagram Design](Images/ER.png)
 
 Figure 2 represents the one-to-many relationship between Customer and Invoice, where a customer may have multiple invoices, but each invoice belongs to only one customer.
 
@@ -60,11 +60,11 @@ Figure 7 demonstrates a ternary relationship between Product, Invoice, and Refun
 
 The schema was designed based on the ER diagram and normalised to 3NF to avoid data redundancy. Normalisation of the schema is visualized in Figure 8. The black line shows the functional dependencies of attributes in each table while the blue line highlights the referential integrity. Relationships are established using primary keys and foreign keys in the schema. Primary keys are defined for each table and foreign key references ensure that the tables are linked with each other as in the ERD design. Not null constraints are also included to ensure that data stored in the database contain essential information such as shipping address and customer email. Suitable data types are also clearly defined in the schema to ensure high data quality. Moreover, to ensure data integrity and consistency, a constraint “Status_Check” is defined and applied on attributes including invoice status, payment status and refund status. The constraint restricts the allowable values for the column, for instance, payment status can only be either “Payment Successful” and “Payment Declined”. This help enhance data quality.
 
-SQL DDL was used to create tables based on the schema. The following shows the DDL for creating the Invoice table. It demonstrates how the primary key, foreign key, not null constraints, and Status_Check constraints was defined. The full SQL script was attached in the appendix. The script was run to create the database "zara.db".
+SQL DDL was used to create tables based on the schema. The following shows the DDL for creating the Invoice table. It demonstrates how the primary key, foreign key, not null constraints, and Status_Check constraints was defined. The full SQL script was attached in the appendix. The script was run to create the database "database.db".
 
 ```{r echo = FALSE}
 library(RSQLite)
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
 ```
 
 ```{sql connection=database_connection, eval=FALSE}
@@ -142,15 +142,15 @@ if ("Invoice.csv" %in% all_files) {
 Referential integrity of the database was maintained through the establishment of foreign key constraints:
 
 ```{r echo=FALSE, message = FALSE, warning = FALSE}
-zara_tables <- RSQLite::dbGetQuery(database_connection, "SELECT name FROM sqlite_master WHERE type='table'")$name
+database_tables <- RSQLite::dbGetQuery(database_connection, "SELECT name FROM sqlite_master WHERE type='table'")$name
 
 fk_constraints_list = list()
-for (table_name in zara_tables) {
+for (table_name in database_tables) {
   fk_constraints <- dbGetQuery(database_connection, paste("PRAGMA foreign_key_list(", table_name, ")"))
   fk_constraints_list[[table_name]] <- fk_constraints
 }
 
-for (table_name in zara_tables) {
+for (table_name in database_tables) {
   if (nrow(fk_constraints_list[[table_name]]) > 0) {
     cat("Foreign key constraints for table", table_name, ":\n")
     print(fk_constraints_list[[table_name]])
@@ -263,7 +263,7 @@ library(dplyr)
 library(ggplot2)
 
 # connect to database
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
 
 # prepare data for plotting the time series data
 sales_data <- RSQLite::dbGetQuery(database_connection, 
@@ -746,7 +746,7 @@ file_path <- "Data/"
 all_files <- list.files(file_path)
 
 
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
 
 check_email_format <- function(email_string) {
   pattern <- "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
@@ -1145,17 +1145,17 @@ RSQLite::dbDisconnect(database_connection)
 library(readr)
 library(RSQLite)
 
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
 
-zara_tables <- RSQLite::dbGetQuery(database_connection, "SELECT name FROM sqlite_master WHERE type='table'")$name
+database_tables <- RSQLite::dbGetQuery(database_connection, "SELECT name FROM sqlite_master WHERE type='table'")$name
 
 fk_constraints_list = list()
-for (table_name in zara_tables) {
+for (table_name in database_tables) {
   fk_constraints <- dbGetQuery(database_connection, paste("PRAGMA foreign_key_list(", table_name, ")"))
   fk_constraints_list[[table_name]] <- fk_constraints
 }
 
-for (table_name in zara_tables) {
+for (table_name in database_tables) {
   if (nrow(fk_constraints_list[[table_name]]) > 0) {
     cat("Foreign key constraints for table", table_name, ":\n")
     print(fk_constraints_list[[table_name]])
@@ -1175,7 +1175,7 @@ library(RSQLite)
 library(dplyr)
 library(ggplot2)
 
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
 
 # Prepare data for plotting the time series data
 sales_data <- RSQLite::dbGetQuery(database_connection, 

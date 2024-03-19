@@ -3,7 +3,7 @@ library(RSQLite)
 library(dplyr)
 library(ggplot2)
 
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
 
 # Prepare data for plotting the time series data
 sales_data <- RSQLite::dbGetQuery(database_connection, 
