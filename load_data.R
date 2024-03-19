@@ -6,7 +6,7 @@ file_path <- "New Data/"
 all_files <- list.files(file_path)
 
 
-database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "database.db")
+database_connection <- RSQLite::dbConnect(RSQLite::SQLite(), "zara.db")
 
 check_email_format <- function(email_string) {
   pattern <- "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
