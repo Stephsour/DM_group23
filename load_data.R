@@ -45,13 +45,7 @@ if ("Customer.csv" %in% all_files) {
   valid_customer$DOB <- as.character(as.Date(valid_customer$DOB,format = "%d/%m/%Y"))
   valid_customer$PhoneNumber <- as.character(paste0("+",valid_customer$PhoneNumber))
   
-  RSQLite::dbWriteTable(database_connection, "Customer0", valid_customer, overwrite = T)
-  
-  insert_query <- paste0("INSERT INTO Customer SELECT * FROM Customer0;")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS Customer0;")
-  RSQLite::dbExecute(database_connection, drop_query)
+  RSQLite::dbWriteTable(database_connection, "Customer", valid_customer, overwrite = F,append = T)
 }
 
 #Validate Invoice
@@ -80,13 +74,8 @@ if ("Invoice.csv" %in% all_files) {
   # adjust format of data
   valid_invoice$InvoiceDate <- as.character(as.Date(valid_invoice$InvoiceDate,format = "%d/%m/%Y"))
   
-  RSQLite::dbWriteTable(database_connection, "Invoice0", valid_invoice, overwrite = T)
+  RSQLite::dbWriteTable(database_connection, "Invoice", valid_invoice, overwrite = F, append = T)
   
-  insert_query <- paste0("INSERT INTO Invoice SELECT * FROM Invoice0;")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS Invoice0;")
-  RSQLite::dbExecute(database_connection, drop_query)    
 }
 
 # Validate Payment
@@ -114,13 +103,8 @@ if ("Payment.csv" %in% all_files){
   # adjust format
   valid_payment$PaymentDate <- as.character(as.Date(valid_payment$PaymentDate,format = "%d/%m/%Y"))
   
-  RSQLite::dbWriteTable(database_connection, "Payment0", valid_payment, overwrite = T)
-  
-  insert_query <- paste0("INSERT INTO Payment SELECT * FROM Payment0;")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS Payment0;")
-  RSQLite::dbExecute(database_connection, drop_query)
+  RSQLite::dbWriteTable(database_connection, "Payment", valid_payment, overwrite = F, append = T)
+
 }
 
 # Validate Sale
@@ -152,13 +136,9 @@ if ("Sale.csv" %in% all_files) {
   valid_sale$StartDate <- as.character(as.Date(valid_sale$StartDate,format = "%d/%m/%Y"))
   valid_sale$EndDate <- as.character(as.Date(valid_sale$EndDate,format = "%d/%m/%Y"))
   
-  RSQLite::dbWriteTable(database_connection, "Sale0", valid_sale, overwrite = T)
+  RSQLite::dbWriteTable(database_connection, "Sale", valid_sale, overwrite = F, append = T)
   
-  insert_query <- paste0("INSERT INTO Sale SELECT * FROM Sale0;")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS Sale0;")
-  RSQLite::dbExecute(database_connection, drop_query)
+
 }
 
 # Validate Refund
@@ -187,13 +167,8 @@ if ("Refund.csv" %in% all_files) {
   # adjust format
   valid_refund$RefundDate <- as.character(as.Date(valid_refund$RefundDate,format = "%d/%m/%Y"))
   
-  RSQLite::dbWriteTable(database_connection, "Refund0", valid_refund, overwrite = T)
-  
-  insert_query <- paste0("INSERT INTO Refund SELECT * FROM Refund0;")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS Refund0;")
-  RSQLite::dbExecute(database_connection, drop_query)
+  RSQLite::dbWriteTable(database_connection, "Refund", valid_refund, overwrite = F, append = T)
+
 }
 
 # Validate Supplier
@@ -215,13 +190,8 @@ if ("Supplier.csv" %in% all_files) {
   #remove duplicated
   valid_supplier <- valid_supplier[!duplicated(valid_supplier),]
   
-  RSQLite::dbWriteTable(database_connection, "Supplier0", valid_supplier, overwrite = T)
+  RSQLite::dbWriteTable(database_connection, "Supplier", valid_supplier, overwrite = F, append = T)
   
-  insert_query <- paste0("INSERT INTO Supplier SELECT * FROM Supplier0;")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS Supplier0;")
-  RSQLite::dbExecute(database_connection, drop_query)
 }
 
 # Insert the remaining
@@ -233,8 +203,6 @@ for (file in remaining) {
   file_content <- file_content[!duplicated(file_content),]
   
   entity <- gsub(".csv","",file)
-  
-  table_name <- gsub(".csv","0",file)
   
   if (entity %in% c("Product", "ProductCategory")) {
     results <- RSQLite::dbGetQuery(database_connection, paste0("SELECT * FROM ",entity,";"))
@@ -264,12 +232,8 @@ for (file in remaining) {
     }
   }
   
-  RSQLite::dbWriteTable(database_connection, table_name, valid_record, overwrite = T)
-  insert_query <- paste0("INSERT INTO ",entity," SELECT * FROM ",table_name,";")
-  RSQLite::dbExecute(database_connection, insert_query)
-  
-  drop_query <- paste0("DROP TABLE IF EXISTS ", table_name,";")
-  RSQLite::dbExecute(database_connection, drop_query)
+  RSQLite::dbWriteTable(database_connection, entity, valid_record, overwrite = F, append = T)
+
   
 }
 

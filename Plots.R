@@ -129,6 +129,12 @@ ggplot(combined_quantity, aes(x = date, y = value)) +
   labs(title = "Time Series Plot for Daily Sales Quantity", x = "Invoice Date", y = "Quantity") + 
   guides(color = guide_legend(order = 1),fill = guide_legend(order = 2))
 
+
+# Fill missing values with 0 before merging
+sales_data$Quantity[is.na(sales_data$Quantity)] <- 0
+sales_data$RefundQuantity[is.na(sales_data$RefundQuantity)] <- 0
+
+#Reason
 # sum up RefundQuantity by Reason
 refundR_summary <- aggregate(RefundQuantity ~ Reason, data = sales_data, FUN = sum)
 
@@ -137,42 +143,93 @@ refundR_summary <- refundR_summary[order(-refundR_summary$RefundQuantity), ]
 
 # create bar chart to count the number of refund reason
 ggplot(refundR_summary, aes(x = reorder(Reason, -RefundQuantity), y = RefundQuantity)) +
-  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
-  labs(title = "Total RefundQuantity by Reason",
+  geom_bar(stat = "identity", fill = "pink", color = "black") +
+  geom_text(aes(label = RefundQuantity), vjust = -0.5, color = "black", size = 3.5) +  
+  labs(title = "Return Reason Summary",
        x = "Reason",
-       y = "Total RefundQuantity") +
+       y = "Total Return Quantity") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+
+# Top 10 Bestselling Products
+# sum up Quantity by ProductName
+quantity_summary <- aggregate(Quantity ~ ProductName, data = sales_data, FUN = sum)
+
+# arrange them in order
+quantity_summary <- quantity_summary[order(-quantity_summary$Quantity), ]
+
+# Keep only top 10 products
+quantity_summary <- quantity_summary[1:10,]
+
+# create bar chart to count the number of refund ProductName
+ggplot(quantity_summary, aes(x = reorder(ProductName, -Quantity), y = Quantity, fill = "Quantity")) +
+  geom_bar(stat = "identity", color = "black", position = "stack") +
+  geom_text(aes(label = Quantity), vjust = -0.5, color = "black", size = 3.5) + 
+  labs(title = "Top 10 Bestselling Products",
+       x = "Product Name",
+       y = "Sales Quantity") +
+  scale_fill_manual(values = c("Quantity" = "skyblue"),
+                    labels = c("Quantity" = "Sales Quantity")) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 5.5))
+
+
+
+# Refund by Product
 # sum up RefundQuantity by ProductName
 refundP_summary <- aggregate(RefundQuantity ~ ProductName, data = sales_data, FUN = sum)
 
-# arrange them in order
-refundP_summary <- refundP_summary[order(-refundP_summary$RefundQuantity), ]
+# Keep only top 10 products
+refundP_summary <- refundP_summary[order(-refundP_summary$RefundQuantity), ][1:10,]
 
-# create bar chart to count the number of refund PreoductName
-ggplot(refundP_summary[1:10,], aes(x = reorder(ProductName, -RefundQuantity), y = RefundQuantity)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  labs(title = "Top 10 Refunded Products",
+# create bar chart to count the number of refund ProductName
+ggplot(refundP_summary, aes(x = reorder(ProductName, -RefundQuantity), y = RefundQuantity, fill = "RefundQuantity")) +
+  geom_bar(stat = "identity", color = "black", position = "stack") +
+  geom_text(aes(label = RefundQuantity), vjust = -0.5, color = "black", size = 3.5) +  
+  labs(title = "Top 10 Highest Return Products",
        x = "Product Name",
-       y = "Total Refund Quantity") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+       y = "Return Quantity") +
+  scale_fill_manual(values = c("RefundQuantity" = "pink"),
+                    labels = c("RefundQuantity" = "Return Quantity")) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 5.5))
 
+
+
+# Sales by product category
 # sum up sell price by Product Category Name
-PCsales_summary <- aggregate(SellPrice ~ CategoryName, data = sales_data, FUN = sum)
+PCsales_summary <- aggregate(SellPrice * Quantity ~ CategoryName, data = sales_data, FUN = sum)
+
+# sum up refund price by Product Category Name
+refund_summary <- aggregate(SellPrice * RefundQuantity ~ CategoryName, data = sales_data, FUN = sum)
+
+# merge the two summaries
+PCsales_summary <- merge(PCsales_summary, refund_summary, by = "CategoryName", all = TRUE)
 
 # arrange them in order
-PCsales_summary <- PCsales_summary[order(-PCsales_summary$SellPrice), ]
+PCsales_summary <- PCsales_summary[order(-PCsales_summary$`SellPrice * Quantity`), ]
 
 # plot
-ggplot(PCsales_summary, aes(x = reorder(CategoryName, -SellPrice), y = SellPrice)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  labs(title = "Total SellPrice by Category Name",
-       x = "Category Name",
-       y = "Total Sell Price") +
+ggplot(PCsales_summary, aes(x = reorder(CategoryName, -`SellPrice * Quantity`))) +
+  geom_bar(aes(y = `SellPrice * Quantity`, fill = "RemainingQuantity"), stat = "identity") +
+  geom_text(aes(y = `SellPrice * Quantity`, label = `SellPrice * Quantity`), vjust = -0.5, color = "black", size = 1.8) +  
+  geom_bar(aes(y = `SellPrice * RefundQuantity`, fill = "RefundQuantity"), stat = "identity") +
+  geom_text(aes(y = `SellPrice * RefundQuantity`, label = `SellPrice * RefundQuantity`), vjust = -0.5, color = "black", size = 1.8) +  
+  labs(title = "Total Sales (with Refund) by Product Category",
+       x = "Product Category",
+       y = "Total Sales",
+       fill = "") +
+  scale_fill_manual(values = c("RemainingQuantity" = "skyblue", "RefundQuantity" = "pink"),
+                    labels = c("RemainingQuantity" = "Remaining Sales", "RefundQuantity" = "Refund Sales")) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-# computing the sum of Quantity and Refund Quantity by Category Name
-PCquantity <- aggregate(cbind(Quantity, RefundQuantity) ~ CategoryName, data = sales_data, FUN = sum)
+# Quantity by Product Category
+# sum up Quantity by Product Category Name
+PCquantity <- aggregate( Quantity ~ CategoryName, data = sales_data, FUN = sum)
+
+# sum up Refund Quantity by Product Category Name
+refund_quantity <- aggregate(RefundQuantity ~ CategoryName, data = sales_data, FUN = sum)
+
+# merge the two summaries
+PCquantity <- merge(PCquantity, refund_quantity, by = "CategoryName", all = TRUE)
 
 #arrange order
 PCquantity <- PCquantity[order(-PCquantity$Quantity, -PCquantity$RefundQuantity), ]
@@ -180,33 +237,48 @@ PCquantity <- PCquantity[order(-PCquantity$Quantity, -PCquantity$RefundQuantity)
 # stacked bar plot for quantity(with return) by category name
 ggplot(PCquantity, aes(x = reorder(CategoryName, -Quantity), y = Quantity)) +
   geom_bar(aes(fill = "RemainingQuantity"), stat = "identity") +
+  geom_text(aes(label = Quantity), vjust = -0.5, color = "black", size = 3.5) +  
   geom_bar(aes(y = RefundQuantity, fill = "RefundQuantity"), stat = "identity") +
   labs(title = "Quantity (vs RefundQuantity) by CategoryName",
-       x = "CategoryName",
+       x = "Category Name",
        y = "Total Quantity") +
   scale_fill_manual(values = c("RemainingQuantity" = "skyblue", "RefundQuantity" = "pink"), 
                     name = "Type") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   guides(fill = guide_legend(title = "Type"))
 
-# computing the sum of Quantity and Refund Quantity by Supplier Name
-SUP_summary <- aggregate(cbind(Quantity, RefundQuantity) ~ SupplierName, data = sales_data, FUN = sum)
+# Quantity by Suppliers
+# sum up Quantity by Supplier Name
+SUPquantity <- aggregate(Quantity ~ SupplierName, data = sales_data, FUN = sum)
+
+# sum up Refund Quantity by Supplier Name
+SUPrefund_quantity <- aggregate(RefundQuantity ~ SupplierName, data = sales_data, FUN = sum)
+
+# merge the two summaries
+SUPquantity <- merge(SUPquantity, SUPrefund_quantity, by = "SupplierName", all = TRUE)
 
 #arrange order
-SUP_summary <- SUP_summary[order(-SUP_summary$Quantity, -SUP_summary$RefundQuantity), ]
+SUPquantity <- SUPquantity[order(-SUPquantity$Quantity, -SUPquantity$RefundQuantity), ]
+
+# Keep only top 5 suppliers
+SUPquantity <- SUPquantity[1:5,]
 
 # stacked bar plot for quantity(with return) by Supplier name
-ggplot(SUP_summary, aes(x = reorder(SupplierName, -Quantity), y = Quantity)) +
+ggplot(SUPquantity, aes(x = reorder(SupplierName, -Quantity), y = Quantity)) +
   geom_bar(aes(fill = "RemainingQuantity"), stat = "identity") +
+  geom_text(aes(label = Quantity), vjust = -0.5, color = "black", size = 3.5) +  
   geom_bar(aes(y = RefundQuantity, fill = "RefundQuantity"), stat = "identity") +
-  labs(title = "Quantity (vs RefundQuantity) by SupplierName",
-       x = "SupplierName",
+  labs(title = "Top 5 Suppliers: Quantity (with Return Quantity)",
+       x = "Supplier Name",
        y = "Total Quantity") +
   scale_fill_manual(values = c("RemainingQuantity" = "skyblue", "RefundQuantity" = "pink"), 
                     name = "Type") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   guides(fill = guide_legend(title = "Type"))
 
+
+
+# transaction summary
 # computing transaction amount in each payment Method
 py_method_summary <- aggregate(SellPrice * Quantity ~ PaymentMethod, data = sales_data, FUN = sum)
 
@@ -215,11 +287,11 @@ py_method_summary <- py_method_summary[order(-py_method_summary$`SellPrice * Qua
 
 # plot
 ggplot(py_method_summary, aes(x = reorder(PaymentMethod, -`SellPrice * Quantity`), y = `SellPrice * Quantity`)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  labs(title = "Total SellPrice * Quantity by PaymentMethod",
-       x = "PaymentMethod",
-       y = "Total SellPrice * Quantity") +
+  geom_bar(stat = "identity", fill = "lavender", color = "black") + 
+  geom_text(aes(label = `SellPrice * Quantity`), vjust = -0.5, color = "black", size = 3.5) +  
+  labs(title = "Total Sales by Payment Method",
+       x = "Payment Method",
+       y = "Total Sales") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-RSQLite::dbDisconnect(database_connection)
 
